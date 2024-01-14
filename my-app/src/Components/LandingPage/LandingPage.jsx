@@ -20,7 +20,7 @@ export const LandingPage = () => {
               </h2>
             </div>
             <div className="info-right">
-              <img src="img-info.jpg" className="info-right__img" />
+              <img src="../public/images/img-info.jpg" className="info-right__img" />
             </div>
           </div>
         </div>
