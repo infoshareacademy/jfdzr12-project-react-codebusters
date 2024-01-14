@@ -17,9 +17,10 @@ export const PricingPosition = (props) => {
                 styles["pricing__description-minus"]
               )}
             >
-              <li>Already taken</li>
-              <li>No modification</li>
-              <li>Single use</li>
+              {props.description.map((el, index) => {
+                const key = `${index}-${el}`;
+                return <li key={key}>{el}</li>;
+              })}
             </ul>
           </div>
         </div>
