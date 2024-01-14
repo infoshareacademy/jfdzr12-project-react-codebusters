@@ -3,6 +3,21 @@ import classnames from "classnames";
 import { PricingPosition } from "./PricingPosition/PricingPosition";
 
 export const Pricing = () => {
+  const descriptionSinglePhotos = [
+    "Already taken",
+    "No modification",
+    "Single use",
+  ];
+  const descriptionPackPhotos = [
+    "Already taken",
+    "No modification",
+    "Single use",
+  ];
+  const descriptionCustomPhotos = [
+    "Taken or new",
+    "Modifications",
+    "Multi use",
+  ];
   return (
     <div>
       <div className={styles["pricing__container"]} id="pricing">
@@ -11,17 +26,17 @@ export const Pricing = () => {
           <PricingPosition
             title="single photo price"
             price="10$"
-            description="Already taken, No modification, Single use"
+            description={descriptionSinglePhotos}
           ></PricingPosition>
           <PricingPosition
             title="pack photo price"
             price="200$"
-            description="Already taken, No modification, Single use"
+            description={descriptionPackPhotos}
           ></PricingPosition>
           <PricingPosition
             title="photo custom price"
             price="Call us"
-            description="Taken or new, Modifications, Multi use"
+            description={descriptionCustomPhotos}
           ></PricingPosition>
           {/* <div className={styles["pricing__option--single"]}>
     <div className={styles["pricing__content"]}>
