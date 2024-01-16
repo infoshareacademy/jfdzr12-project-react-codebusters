@@ -3,7 +3,7 @@ import classnames from "classnames";
 
 export const PricingPosition = (props) => {
   return (
-    <div>
+    <>
       <div className={styles["pricing__option--single"]}>
         <div className={styles["pricing__content"]}>
           <h3 className={styles["pricing__content-header"]}>{props.title}</h3>
@@ -25,6 +25,6 @@ export const PricingPosition = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

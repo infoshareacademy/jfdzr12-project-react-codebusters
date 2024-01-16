@@ -19,7 +19,7 @@ export const Pricing = () => {
     "Multi use",
   ];
   return (
-    <div>
+    <>
       <div className={styles["pricing__container"]} id="pricing">
         <h1 className={styles["pricing__header"]}>Our pricing</h1>
         <div className={styles["pricing__content-container"]}>
@@ -85,6 +85,6 @@ export const Pricing = () => {
   </div> */}
         </div>
       </div>
-    </div>
+    </>
   );
 };
