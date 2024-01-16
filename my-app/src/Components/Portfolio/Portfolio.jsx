@@ -3,7 +3,7 @@ import portfolioData from "../../portfolio.json";
 
 export const Portfolio = () => {
   return (
-    <div>
+    <>
       <div className={styles["portfolio__container"]} id="portfolio">
         <h1 className={styles["portfolio__header"]}>Our portfolio</h1>
         <div className={styles["portfolio"]}>
@@ -26,6 +26,6 @@ export const Portfolio = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
