@@ -4,6 +4,7 @@ import { Header } from "./Components/Header/Header";
 import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Portfolio } from "./Components/Portfolio/Portfolio";
 import { Pricing } from "./Components/Pricing/Pricing";
+import { ContactForm } from "./Components/ContactForm/ContactForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
         <LandingPage />
         <Portfolio />
         <Pricing />
+        <ContactForm />
       </div>
     </>
   );
