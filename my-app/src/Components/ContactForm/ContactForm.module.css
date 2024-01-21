@@ -20,10 +20,13 @@
 }
 
 .modal__header {
-  text-transform: uppercase;
   text-align: center;
-  font-size: var(--modal-header-font-size);
+  font-weight: 800;
+  font-size: 2.6rem;
   margin-top: 30px;
+  color: var(--main-text-color);
+  margin: 10px;
+  font-family: "Dancing Script", cursive;
 }
 
 .form__label {
@@ -31,6 +34,7 @@
   margin: 0 60px 5px;
   font-weight: bold;
   align-self: flex-start;
+  color: var(--main-text-color);
 }
 
 .form__input--text,

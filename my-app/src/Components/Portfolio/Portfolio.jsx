@@ -1,5 +1,5 @@
 import styles from "./Portfolio.module.css";
-import portfolioData from "../../../public/photos.json";
+import portfolioData from "../../../public/images/photos.json";
 
 export const Portfolio = () => {
   return (
