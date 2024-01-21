@@ -32,6 +32,14 @@ export const Header = () => {
             <li
               className={classnames(
                 styles.header__link,
+                styles["header__links--contact"]
+              )}
+            >
+              <a href="#contact">Contact</a>
+            </li>
+            <li
+              className={classnames(
+                styles.header__link,
                 styles["header__links--basket"]
               )}
             >

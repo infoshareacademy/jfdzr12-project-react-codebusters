@@ -1,0 +1,99 @@
+.modal {
+  background-color: var(--modal-bg-color);
+  color: var(--modal-text-color);
+  box-shadow: 0px 5px 20px var(--modal-bg-color-gradient);
+  height: 430px;
+  width: 500px;
+  border: 1px solid var(--modal-border-color);
+  border-radius: 20px;
+  margin: 160px auto 0;
+  padding-bottom: 20px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.modal__header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: var(--modal-header-font-size);
+  margin-top: 30px;
+}
+
+.form__label {
+  display: block;
+  margin: 0 60px 5px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.form__input--text,
+.form__input--email,
+.form__input--textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 0 10px 6px;
+  border: 1.5px solid var(--modal-border-color);
+  border-radius: 5px;
+  cursor: text;
+}
+
+.form__input--textarea {
+  resize: none;
+}
+
+.form__input--text:focus,
+.form__input--email:focus,
+.form__input--textarea:focus {
+  background-color: var(--modal-button-bg-color);
+  border: 1.5px solid var(--modal-input-focus-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--modal-input-focus-color);
+}
+
+.form__input--text:valid,
+.form__input--email:valid,
+.form__input--textarea:valid {
+  border: 1.5px solid var(--modal-input-valid-color);
+  box-shadow: 0 0 2px var(--modal-input-valid-color);
+}
+
+/* invalid when not focused */
+.form__input--text:invalid:not(:focus):not(:placeholder-shown),
+.form__input--email:invalid:not(:focus):not(:placeholder-shown),
+.form__input--textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border: 1.5px solid var(--modal-input-invalid-color);
+  box-shadow: 0 0 2px var(--modal-input-invalid-color);
+}
+
+/* invalid when click submit  */
+.form__input--text:invalid:focus:not(:placeholder-shown),
+.form__input--email:invalid:focus:not(:placeholder-shown),
+.form__input--textarea:invalid:focus:not(:placeholder-shown) {
+  border: 1.5px solid var(--modal-input-invalid-color);
+  box-shadow: 0 0 2px var(--modal-input-invalid-color);
+}
+
+.form__input--submit {
+  align-self: center;
+  padding: 2px 20px;
+  margin: 20px 20px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  color: var(--dark-text-color);
+  background-color: var(--box-dark-color);
+  transition: 0.4s;
+}
+
+.form__input--submit:hover {
+  color: var(--box-light-color);
+  background-color: var(--dark-hover-color);
+}
