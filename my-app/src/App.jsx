@@ -5,6 +5,7 @@ import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Portfolio } from "./Components/Portfolio/Portfolio";
 import { Pricing } from "./Components/Pricing/Pricing";
 import { ContactForm } from "./Components/ContactForm/ContactForm";
+import { Modal } from "./Components/Modal/Modal";
 
 function App() {
   const [count, setCount] = useState(0);
