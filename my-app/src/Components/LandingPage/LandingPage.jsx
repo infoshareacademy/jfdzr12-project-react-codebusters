@@ -1,27 +1,18 @@
 import { useState, useEffect } from "react";
 import styles from "./LandingPage.module.css";
 
-export const LandingPage = () => {
-  const quoteArr = [
-    "A camera alone does not make a picture. To make a picture you need a camera, a photographer and above all a subject. It is the subject that determines the interest of the photograph. – Man Ray",
-    "Capturing Moments, Creating Memories: Lens Studio, where photography meets artistry, offering stunning prints from our portfolio to adorn your world.",
-  ];
-
-  const [quote, setQuote] = useState(quoteArr[0]);
+export const LandingPage = ({ quotes }) => {
+  const [quote, setQuote] = useState(quotes[0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setQuote((quote) => {
-        if (quote === quoteArr[0]) {
-          return (quote = quoteArr[1]);
-        } else {
-          return (quote = quoteArr[0]);
-        }
-      });
+      setQuote((prevQuote) =>
+        prevQuote === quotes[0] ? quotes[1] : quotes[0]
+      );
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [quotes]);
 
   return (
     <>

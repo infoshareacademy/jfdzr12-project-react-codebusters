@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Header } from "./Components/Header/Header";
 import { LandingPage } from "./Components/LandingPage/LandingPage";
@@ -8,13 +7,16 @@ import { ContactForm } from "./Components/ContactForm/ContactForm";
 import { Modal } from "./Components/Modal/Modal";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const quotes = [
+    "A camera alone does not make a picture. To make a picture you need a camera, a photographer and above all a subject. It is the subject that determines the interest of the photograph. – Man Ray",
+    "Capturing Moments, Creating Memories: Lens Studio, where photography meets artistry, offering stunning prints from our portfolio to adorn your world.",
+  ];
 
   return (
     <>
       <Header />
       <div className="main__container">
-        <LandingPage />
+        <LandingPage quotes={quotes} />
         <Portfolio />
         <Pricing />
         <ContactForm />
