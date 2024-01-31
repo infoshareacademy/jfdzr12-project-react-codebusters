@@ -1,27 +1,53 @@
-import  styles  from "./Header.module.css";
+import styles from "./Header.module.css";
 import classnames from "classnames";
 
 export const Header = () => {
-return (
-<div>
+  return (
+    <>
       <div className={styles.header__container}>
         <div className={styles["header__image-container"]}>
-          <img className={styles["header__image"]} src="../public/images/logo.png" />
+          <img
+            className={styles["header__image"]}
+            src="../public/images/logo.png"
+          />
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
-            <li className={classnames(styles.header__link, styles["header__links--examples"])}>
+            <li
+              className={classnames(
+                styles.header__link,
+                styles["header__links--examples"]
+              )}
+            >
               <a href="#portfolio">Portfolio</a>
             </li>
-            <li className={classnames(styles.header__link, styles["header__links--pricing"])}>
+            <li
+              className={classnames(
+                styles.header__link,
+                styles["header__links--pricing"]
+              )}
+            >
               <a href="#pricing">Pricing</a>
             </li>
-            <li className={classnames(styles.header__link, styles["header__links--basket"])}>Basket</li>
+            <li
+              className={classnames(
+                styles.header__link,
+                styles["header__links--contact"]
+              )}
+            >
+              <a href="#contact">Contact</a>
+            </li>
+            <li
+              className={classnames(
+                styles.header__link,
+                styles["header__links--basket"]
+              )}
+            >
+              Basket
+            </li>
           </ul>
         </div>
       </div>
-
-
-</div>
-)
-}
+    </>
+  );
+};
