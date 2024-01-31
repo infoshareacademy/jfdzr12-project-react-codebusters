@@ -1,24 +1,18 @@
 import styles from "./ContactForm.module.css";
 import classnames from "classnames";
-// import { sendRequest } from "../utils/sendRequest.js";
 import { validateEmail } from "../../utils/validationEmail.js";
 import { useRef, useState } from "react";
 
 export const ContactForm = () => {
-  //   const [form, setForm] = useState({ email: "", password: "" });
   const [emailMessages, setEmailMessages] = useState([]);
   const inputEmailEl = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // sendRequest(form);
     const emailValue = inputEmailEl.current.value;
 
     setEmailMessages(validateEmail(emailValue));
-  };
-
-  const handleChangeValue = (e) => {
-    setEmailMessages({ ...emailMessages, [e.target.name]: e.target.value });
+    console.log(emailValue);
   };
 
   return (
@@ -48,7 +42,6 @@ export const ContactForm = () => {
           Email
         </label>
         <input
-          onChange={handleChangeValue}
           ref={inputEmailEl}
           placeholder=""
           type="email"
@@ -60,6 +53,12 @@ export const ContactForm = () => {
           )}
           required
         />
+        <ol>
+          {emailMessages.map((msg) => (
+            <li key={msg}>{msg}</li>
+          ))}
+        </ol>
+
         <label htmlFor="message" className={classnames(styles["form__label"])}>
           Message
         </label>
