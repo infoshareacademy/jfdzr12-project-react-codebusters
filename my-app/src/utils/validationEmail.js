@@ -1,19 +1,14 @@
-// const MINIMUM_PASSWORD_LENGTH = 5;
-// const arePasswordTheSame = (password, confirmPassword) => {
-//   return password === confirmPassword;
-// };
+const MINIMUM_NAME_LETTER_LENGTH = 1;
 
-// const hasPasswordMinimumCharts = (password) => {
-//   return password.length >= MINIMUM_PASSWORD_LENGTH;
-// };
+const hasUserNameMinimumCharts = (email) => {
+  return email.length >= MINIMUM_NAME_LETTER_LENGTH; //todo change email.length
+};
 
-export const validateEmail = (emailValue) => {
+export const validateEmail = (email) => {
   const errorMessages = [];
-  //   if (!arePasswordTheSame(values.password, values.confirmPassword)) {
-  //     errorMessages.push("Hasła nie są identyczne!");
-  //   }
-  //   if (!hasPasswordMinimumCharts(values.password)) {
-  //     errorMessages.push("Hasło ma za mało znaków!");
-  //   }
+  if (!hasUserNameMinimumCharts(email)) {
+    errorMessages.push("User mane have to contain minimum one letter");
+  }
+
   return errorMessages;
 };
