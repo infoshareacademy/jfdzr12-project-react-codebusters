@@ -4,14 +4,14 @@ import { validateEmail } from "../../utils/validationEmail.js";
 import { useRef, useState } from "react";
 
 export const ContactForm = () => {
-  const [emailMessages, setEmailMessages] = useState([]);
+  const [emailMessage, setEmailMessage] = useState("");
   const inputEmailEl = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailValue = inputEmailEl.current.value;
 
-    setEmailMessages(validateEmail(emailValue));
+    setEmailMessage(validateEmail(emailValue));
     console.log(emailValue);
   };
 
@@ -53,12 +53,9 @@ export const ContactForm = () => {
           )}
           required
         />
-        <ol>
-          {emailMessages.map((msg) => (
-            <li key={msg}>{msg}</li>
-          ))}
-        </ol>
-
+        <p className={classnames(styles["form__error-message"])}>
+          {emailMessage}
+        </p>
         <label htmlFor="message" className={classnames(styles["form__label"])}>
           Message
         </label>

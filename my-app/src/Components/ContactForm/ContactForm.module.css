@@ -78,3 +78,9 @@
   color: var(--box-light-color);
   background-color: var(--dark-hover-color);
 }
+
+.form__error-message {
+  margin: 0;
+  color: red;
+  font-size: 0.9rem;
+}
