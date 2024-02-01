@@ -1,14 +1,11 @@
-const MINIMUM_NAME_LETTER_LENGTH = 1;
+function validationEmail(email) {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-const hasUserNameMinimumCharts = (email) => {
-  return email.length >= MINIMUM_NAME_LETTER_LENGTH; //todo change email.length
-};
+  return email.match(regex);
+}
 
 export const validateEmail = (email) => {
-  const errorMessages = [];
-  if (!hasUserNameMinimumCharts(email)) {
-    errorMessages.push("User mane have to contain minimum one letter");
+  if (!validationEmail(email)) {
+    return "User email is not valid";
   }
-
-  return errorMessages;
 };

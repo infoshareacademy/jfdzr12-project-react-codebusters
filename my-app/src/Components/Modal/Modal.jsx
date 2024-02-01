@@ -1,5 +1,5 @@
 import styles from "./Modal.module.css";
 
-export const Modal = () => {
-  return <div className={styles["modal-container"]}></div>;
+export const Modal = ({ children }) => {
+  return <div className={styles["modal-container"]}>{children}</div>;
 };

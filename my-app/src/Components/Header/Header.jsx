@@ -1,7 +1,19 @@
 import styles from "./Header.module.css";
 import classnames from "classnames";
+import React, { useState } from "react";
+import { BasketModal } from "../BasketModal/BasketModal";
 
 export const Header = () => {
+  const [isCartModalOpen, setCartModalOpen] = useState(false);
+
+  const handleCartClick = () => {
+    setCartModalOpen(true);
+  };
+
+  // const handleCloseCartModal = () => {
+  //   setCartModalOpen(false);
+  // };
+
   return (
     <>
       <div className={styles.header__container}>
@@ -42,12 +54,14 @@ export const Header = () => {
                 styles.header__link,
                 styles["header__links--basket"]
               )}
+              onClick={handleCartClick}
             >
               Basket
             </li>
           </ul>
         </div>
       </div>
+      <BasketModal isOpen={isCartModalOpen} />
     </>
   );
 };
