@@ -1,12 +1,11 @@
 .modal {
-  /* background-color: var(--modal-bg-color);
-  color: var(--modal-text-color); */
   color: var(--main-text-color);
-  height: 480px;
+  height: 980px;
   width: 500px;
   border-radius: 20px;
-  margin: 160px auto 0;
+  margin: 60px auto 0;
   padding-bottom: 20px;
+  padding-top: 100px;
 }
 
 .modal__form {
