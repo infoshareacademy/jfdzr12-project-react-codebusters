@@ -20,7 +20,7 @@ function App() {
         <Portfolio />
         <Pricing />
         <ContactForm />
-        <Modal discountPercentage="10" />
+        <Modal />
       </div>
     </>
   );
