@@ -1,10 +1,9 @@
 .modal {
-  background-color: var(--modal-bg-color);
-  color: var(--modal-text-color);
-  box-shadow: 0px 5px 20px var(--modal-bg-color-gradient);
-  height: 430px;
+  /* background-color: var(--modal-bg-color);
+  color: var(--modal-text-color); */
+  color: var(--main-text-color);
+  height: 480px;
   width: 500px;
-  border: 1px solid var(--modal-border-color);
   border-radius: 20px;
   margin: 160px auto 0;
   padding-bottom: 20px;
@@ -16,14 +15,19 @@
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
-  margin-top: 20px;
+  padding-top: 20px;
+  border: 2.5px dotted var(--borders-color);
+  box-shadow: 0 8px 32px 0 var(--box-dark-color);
+  border-radius: 20px;
 }
 
 .modal__header {
-  text-transform: uppercase;
   text-align: center;
-  font-size: var(--modal-header-font-size);
-  margin-top: 30px;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--main-text-color);
+  margin-bottom: 30px;
+  font-family: "Dancing Script", cursive;
 }
 
 .form__label {
@@ -39,9 +43,10 @@
   width: 80%;
   padding: 10px;
   margin: 0 10px 6px;
-  border: 1.5px solid var(--modal-border-color);
+  border: 1.5px solid var(--box-lighter-color);
   border-radius: 5px;
   cursor: text;
+  box-shadow: 0 0 5px var(--box-lighter-color);
 }
 
 .form__input--textarea {
@@ -51,33 +56,9 @@
 .form__input--text:focus,
 .form__input--email:focus,
 .form__input--textarea:focus {
-  background-color: var(--modal-button-bg-color);
-  border: 1.5px solid var(--modal-input-focus-color);
+  border: 1.5px solid var(--box-lighter-color);
   outline: none;
-  box-shadow: 0 0 5px var(--modal-input-focus-color);
-}
-
-.form__input--text:valid,
-.form__input--email:valid,
-.form__input--textarea:valid {
-  border: 1.5px solid var(--modal-input-valid-color);
-  box-shadow: 0 0 2px var(--modal-input-valid-color);
-}
-
-/* invalid when not focused */
-.form__input--text:invalid:not(:focus):not(:placeholder-shown),
-.form__input--email:invalid:not(:focus):not(:placeholder-shown),
-.form__input--textarea:invalid:not(:focus):not(:placeholder-shown) {
-  border: 1.5px solid var(--modal-input-invalid-color);
-  box-shadow: 0 0 2px var(--modal-input-invalid-color);
-}
-
-/* invalid when click submit  */
-.form__input--text:invalid:focus:not(:placeholder-shown),
-.form__input--email:invalid:focus:not(:placeholder-shown),
-.form__input--textarea:invalid:focus:not(:placeholder-shown) {
-  border: 1.5px solid var(--modal-input-invalid-color);
-  box-shadow: 0 0 2px var(--modal-input-invalid-color);
+  box-shadow: 0 0 5px var(--box-lighter-color);
 }
 
 .form__input--submit {

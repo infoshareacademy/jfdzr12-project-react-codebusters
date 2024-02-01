@@ -17,7 +17,7 @@ export const ContactForm = () => {
 
   return (
     <div className={classnames(styles["modal"])} id="contact">
-      <h2 className={classnames(styles["modal__header"])}>Contact us</h2>
+      <h1 className={classnames(styles["modal__header"])}>Contact us</h1>
       <form
         action=""
         method="get"
