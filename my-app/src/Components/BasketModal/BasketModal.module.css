@@ -1,0 +1,13 @@
+.basket-modal__button-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  margin-right: 16px;
+  height: 24px;
+  width: 24px;
+  color: var(--dark-text-color);
+  background-color: var(--box-dark-color);
+  border: none;
+  color: var(--dark-text-color);
+  transition: 0.4s;
+}

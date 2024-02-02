@@ -1,4 +1,4 @@
-.modal-container {
+.modal__container {
   height: 470px;
   min-width: 50%;
   background-color: var(--box-light-color);
@@ -13,4 +13,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--main-text-color);
+}
+
+.modal__content {
+  margin: 20px;
 }
