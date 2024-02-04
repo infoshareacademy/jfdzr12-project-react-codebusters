@@ -2,12 +2,19 @@ import styles from "./Portfolio.module.css";
 import portfolioData from "../../../public/photos.json";
 import { PortfolioModal } from "../PortfolioModal/PortfolioModal";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+// onClick={() => { setImageId(photo.id) }}
+
+
 
 export const Portfolio = () => {
   const [isPortfolioModalOpen, setPortfolioModalOpen] = useState(false);
-
+  const [imageId, setImageId] = useState(null);
   const handlePortfolioImageClick = () => {
     setPortfolioModalOpen(true);
+    setImageId(photo.id)
   };
 
   const handleClosePortfolioModal = () => {
@@ -28,12 +35,14 @@ export const Portfolio = () => {
       <div className={styles["portfolio__photos"]}>
         {portfolioData.photos.map((photo) => (
           <div key={photo.id} className={styles["portfolio__items"]}>
-            <img
+            <NavLink to={`/portfolio/:${photo.id}`}> <img
               src={photo.url}
               className={styles["portfolio__photo"]}
               data-id={photo.id}
               onClick={handlePortfolioImageClick}
-            ></img>
+            /> </NavLink>
+            <Outlet context={imageId} />
+
           </div>
         ))}
       </div>
@@ -41,6 +50,6 @@ export const Portfolio = () => {
         isOpen={isPortfolioModalOpen}
         onClose={handleClosePortfolioModal}
       />
-    </div>
+    </div >
   );
 };
