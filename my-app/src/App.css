@@ -8,12 +8,16 @@
   --dark-hover-color: #7c7979;
   --borders-color: #3f3f364d;
   --red-color: #ec7171;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .main__container {
   background: rgba(0, 0, 0, 0.25);
   box-shadow: 0 8px 32px 0 var(--box-dark-color);
-  margin: 40px;
+  margin: 50px;
   background: var(--box-light-color);
 }
 
