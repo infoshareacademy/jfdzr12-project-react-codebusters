@@ -4,7 +4,7 @@ import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Portfolio } from "./Components/Portfolio/Portfolio";
 import { Pricing } from "./Components/Pricing/Pricing";
 import { ContactForm } from "./Components/ContactForm/ContactForm";
-import { Modal } from "./Components/Modal/Modal";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
   const quotes = [
@@ -14,13 +14,17 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className="main__container">
-        <LandingPage quotes={quotes} />
-        <Portfolio />
-        <Pricing />
-        <ContactForm />
-      </div>
+      <BrowserRouter>
+        <Header />
+        <div className="main__container">
+          <Routes>
+            <Route path="/" element={<LandingPage quotes={quotes} />}></Route>
+            <Route path="/portfolio" element={<Portfolio />}></Route>
+            <Route path="/pricing" element={<Pricing />}></Route>
+            <Route path="/contactform" element={<ContactForm />}></Route>
+          </Routes>
+        </div>
+      </BrowserRouter >
     </>
   );
 }
