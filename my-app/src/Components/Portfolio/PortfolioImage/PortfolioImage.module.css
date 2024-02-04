@@ -1,0 +1,11 @@
+.portfolio-image__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 750px;
+}
+
+.portfolio-image__image {
+  width: 50%;
+}
