@@ -2,6 +2,8 @@ import styles from "./Header.module.css";
 import classnames from "classnames";
 import React, { useState } from "react";
 import { BasketModal } from "../BasketModal/BasketModal";
+import { NavLink } from "react-router-dom";
+import { Portfolio } from "../Portfolio/Portfolio";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
@@ -18,10 +20,11 @@ export const Header = () => {
     <>
       <div className={styles.header__container}>
         <div className={styles["header__image-container"]}>
-          <img
+          <NavLink to="/"><img
             className={styles["header__image"]}
             src="../public/images/logo.png"
-          />
+          /></NavLink>
+
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
@@ -31,7 +34,7 @@ export const Header = () => {
                 styles["header__links--examples"]
               )}
             >
-              <a href="#portfolio">Portfolio</a>
+              <NavLink to="/portfolio">Portfolio</NavLink>
             </li>
             <li
               className={classnames(
@@ -39,7 +42,7 @@ export const Header = () => {
                 styles["header__links--pricing"]
               )}
             >
-              <a href="#pricing">Pricing</a>
+              <NavLink to="/pricing">Pricing</NavLink>
             </li>
             <li
               className={classnames(
@@ -47,7 +50,7 @@ export const Header = () => {
                 styles["header__links--contact"]
               )}
             >
-              <a href="#contact">Contact</a>
+              <NavLink to="/contactform">Contact</NavLink>
             </li>
             <li
               className={classnames(
