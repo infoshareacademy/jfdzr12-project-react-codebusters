@@ -1,8 +1,8 @@
-import styles from "./BasketModal.module.css";
+import styles from "./PortfolioModal.module.css";
 import { Modal } from "../Modal/Modal.jsx";
 import { useEffect } from "react";
 
-export const BasketModal = ({ isOpen, onClose }) => {
+export const PortfolioModal = ({ isOpen, onClose }) => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -29,18 +29,18 @@ export const BasketModal = ({ isOpen, onClose }) => {
     <>
       <div style={{ display: isOpen ? "block" : "none" }}>
         {isOpen && (
-          <div className="basket-modal__overlay" onClick={onClose}></div>
+          <div className="portfolio-modal__overlay" onClick={onClose}></div>
         )}
 
         <Modal>
           <button
-            className={styles["basket-modal__button-close"]}
+            className={styles["portfolio-modal__button-close"]}
             onClick={onClose}
           >
             x
           </button>
           <div>
-            <h1>Basket modal </h1>
+            <h1>Portfolio modal </h1>
           </div>
         </Modal>
       </div>

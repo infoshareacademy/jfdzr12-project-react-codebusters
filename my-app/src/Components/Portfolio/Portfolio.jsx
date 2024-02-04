@@ -1,7 +1,17 @@
 import styles from "./Portfolio.module.css";
-import portfolioData from "../../../public/images/photos.json";
+import portfolioData from "../../../public/photos.json";
 
 export const Portfolio = () => {
+  const [isPortfolioModalOpen, setPortfolioModalOpen] = useState(false);
+
+  const handlePortfolioImageClick = () => {
+    setPortfolioModalOpen(true);
+  };
+
+  const handleClosePortfolioModal = () => {
+    setPortfolioModalOpen(false);
+  };
+
   return (
     <div className={styles["portfolio__container"]} id="portfolio">
       <h1 className={styles["portfolio__header"]}>Our portfolio</h1>
@@ -20,10 +30,15 @@ export const Portfolio = () => {
               src={photo.url}
               className={styles["portfolio__photo"]}
               data-id={photo.id}
+              onClick={handlePortfolioImageClick}
             ></img>
           </div>
         ))}
       </div>
+      <PortfolioModal
+        isOpen={isPortfolioModalOpen}
+        onClose={handleClosePortfolioModal}
+      />
     </div>
   );
 };

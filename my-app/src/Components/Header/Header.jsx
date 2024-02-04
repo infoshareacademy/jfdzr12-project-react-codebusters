@@ -10,9 +10,9 @@ export const Header = () => {
     setCartModalOpen(true);
   };
 
-  // const handleCloseCartModal = () => {
-  //   setCartModalOpen(false);
-  // };
+  const handleCloseCartModal = () => {
+    setCartModalOpen(false);
+  };
 
   return (
     <>
@@ -61,7 +61,7 @@ export const Header = () => {
           </ul>
         </div>
       </div>
-      <BasketModal isOpen={isCartModalOpen} />
+      <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
     </>
   );
 };
