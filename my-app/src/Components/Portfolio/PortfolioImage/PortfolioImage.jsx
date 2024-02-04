@@ -9,7 +9,7 @@ export const PortfolioImage = () => {
     );
     return (
         <div>
-            <img src={photo.image} />
+            <img src={photo.url} />
         </div>
     )
 }
