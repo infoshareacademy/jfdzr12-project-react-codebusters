@@ -4,12 +4,8 @@ import styles from "./PortfolioImage.module.css";
 
 export const PortfolioImage = () => {
   const { imageId } = useParams();
+  const photo = portfolioData.photos.find((el) => el.id === parseInt(imageId));
 
-  const photo = portfolioData.photos.find(
-    (el) => el.id == imageId.replace(":", "")
-  );
-
-  console.log("PHOTO", photo);
   return (
     <div className={styles["portfolio-image__content"]}>
       <img src={photo.url} className={styles["portfolio-image__image"]} />

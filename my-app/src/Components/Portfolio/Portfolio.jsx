@@ -19,7 +19,7 @@ export const Portfolio = () => {
       <div className={styles["portfolio__photos"]}>
         {portfolioData.photos.map((photo) => (
           <div key={photo.id} className={styles["portfolio__items"]}>
-            <Link to={`/portfolio/:${photo.id}`}>
+            <Link to={`/portfolio/${photo.id}`}>
               <img
                 src={photo.url}
                 className={styles["portfolio__photo"]}

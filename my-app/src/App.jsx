@@ -9,7 +9,6 @@ import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioi
 import { NotFound } from "./Components/NotFound/NotFound";
 // import { ThemeProvider } from "./providers/theme";
 
-
 function App() {
   const quotes = [
     "A camera alone does not make a picture. To make a picture you need a camera, a photographer and above all a subject. It is the subject that determines the interest of the photograph. – Man Ray",
@@ -27,11 +26,14 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />}></Route>
             <Route path="/pricing" element={<Pricing />}></Route>
             <Route path="/contactform" element={<ContactForm />}></Route>
-            <Route path="/portfolio/:imageId" element={<PortfolioImage />}></Route>
+            <Route
+              path="/portfolio/:imageId"
+              element={<PortfolioImage />}
+            ></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
-      </BrowserRouter >
+      </BrowserRouter>
       {/* </ThemeProvider> */}
     </>
   );
