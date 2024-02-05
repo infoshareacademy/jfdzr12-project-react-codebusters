@@ -7,12 +7,13 @@
 }
 
 .pricing__header {
-  text-align: center;
-  font-weight: 800;
-  font-size: 2.6rem;
-  color: var(--main-text-color);
   margin: 10px auto 80px;
-  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: 800;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 .pricing__content-container {

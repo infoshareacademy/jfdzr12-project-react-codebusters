@@ -1,7 +1,7 @@
 :root {
   --main-text-color: #665858;
   --dark-text-color: #605552;
-  --box-light-color: hsl(0, 50%, 99%);
+  --box-light-color: hsl(0, 0%, 100%);
   --box-dark-color: #f0e5e3;
   --box-lighter-color: #e1d9d6;
   --colored-text-color: #89645b;

@@ -4,12 +4,13 @@
 
 .portfolio__header {
   padding-top: 90px;
+  margin: 60px auto 40px;
   text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   font-weight: 800;
-  font-size: 2.6rem;
   color: var(--main-text-color);
-  margin: 10px;
-  font-family: "Dancing Script", cursive;
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 .portfolio__info {
