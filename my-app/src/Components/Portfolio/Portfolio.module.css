@@ -1,16 +1,16 @@
 .portfolio__container {
   margin-bottom: 120px;
-  /* padding-bottom: 80px; */
 }
 
 .portfolio__header {
   padding-top: 90px;
+  margin: 60px auto 40px;
   text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   font-weight: 800;
-  font-size: 2.6rem;
   color: var(--main-text-color);
-  margin: 10px;
-  font-family: "Dancing Script", cursive;
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 .portfolio__info {
@@ -30,8 +30,6 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 40px;
-  border: 2.5px dotted var(--borders-color);
-  box-shadow: 0 8px 32px 0 var(--box-dark-color);
   border-radius: 20px;
   font-style: oblique;
   margin: 10px 40px;
@@ -56,13 +54,12 @@
 .portfolio__photo {
   width: 250px;
   height: 150px;
-  border: 2px solid var(--borders-color);
-  border-radius: 10px 100px / 120px;
-  transition: 0.4s all ease-in-out;
+  border-radius: 25px;
+  transition: 0.5s all ease-in-out;
 }
 
 .portfolio__photo:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .portfolio {
@@ -73,28 +70,3 @@
   font-size: 2rem;
   text-wrap: wrap;
 }
-
-/* .portfolio__button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .portfolio__button-more {
-    padding: 2px 20px;
-    margin: 20px 20px;
-    align-self: flex-end;
-    padding: 20px 30px;
-    border-radius: 20px;
-    border: none;
-    font-size: 1rem;
-    color: var(--dark-text-color);
-    background-color: var(--box-dark-color);
-    transition: 0.4s;
-  }
-  
-  .portfolio__button-more:hover {
-    color: var(--box-light-color);
-    background-color: var(--dark-hover-color);
-  } */

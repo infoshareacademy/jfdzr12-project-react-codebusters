@@ -4,7 +4,10 @@ import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Portfolio } from "./Components/Portfolio/Portfolio";
 import { Pricing } from "./Components/Pricing/Pricing";
 import { ContactForm } from "./Components/ContactForm/ContactForm";
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
+import { NotFound } from "./Components/NotFound/NotFound";
+// import { ThemeProvider } from "./providers/theme";
 
 function App() {
   const quotes = [
@@ -14,6 +17,7 @@ function App() {
 
   return (
     <>
+      {/* <ThemeProvider> */}
       <BrowserRouter>
         <Header />
         <div className="main__container">
@@ -22,9 +26,15 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />}></Route>
             <Route path="/pricing" element={<Pricing />}></Route>
             <Route path="/contactform" element={<ContactForm />}></Route>
+            <Route
+              path="/portfolio/:imageId"
+              element={<PortfolioImage />}
+            ></Route>
+            <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
-      </BrowserRouter >
+      </BrowserRouter>
+      {/* </ThemeProvider> */}
     </>
   );
 }

@@ -15,15 +15,19 @@
   align-items: center;
   font-size: 1.1rem;
   padding-top: 20px;
-  border: 2.5px dotted var(--borders-color);
+  border: 0.5px solid rgba(63, 63, 54, 30%);
   box-shadow: 0 8px 32px 0 var(--box-dark-color);
   border-radius: 20px;
 }
 
 .modal__header {
+  margin: 0px auto 40px;
   text-align: center;
-  font-size: var(--modal-header-font-size);
-  margin-top: 30px;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: 800;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 .form__label {

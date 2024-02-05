@@ -1,19 +1,10 @@
 import styles from "./Portfolio.module.css";
-import portfolioData from "../../../public/images/photos.json";
-import { PortfolioModal } from "../PortfolioModal/PortfolioModal";
+import portfolioData from "../../../public/photos.json";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Portfolio = () => {
-  const [isPortfolioModalOpen, setPortfolioModalOpen] = useState(false);
-
-  const handlePortfolioImageClick = () => {
-    setPortfolioModalOpen(true);
-  };
-
-  const handleClosePortfolioModal = () => {
-    setPortfolioModalOpen(false);
-  };
-
+  const [imageId, setImageId] = useState(null);
   return (
     <div className={styles["portfolio__container"]} id="portfolio">
       <h1 className={styles["portfolio__header"]}>Our portfolio</h1>
@@ -28,19 +19,19 @@ export const Portfolio = () => {
       <div className={styles["portfolio__photos"]}>
         {portfolioData.photos.map((photo) => (
           <div key={photo.id} className={styles["portfolio__items"]}>
-            <img
-              src={photo.url}
-              className={styles["portfolio__photo"]}
-              data-id={photo.id}
-              onClick={handlePortfolioImageClick}
-            ></img>
+            <Link to={`/portfolio/${photo.id}`}>
+              <img
+                src={photo.url}
+                className={styles["portfolio__photo"]}
+                data-id={photo.id}
+                onClick={() => {
+                  setImageId(photo.id);
+                }}
+              />
+            </Link>
           </div>
         ))}
       </div>
-      <PortfolioModal
-        isOpen={isPortfolioModalOpen}
-        onClose={handleClosePortfolioModal}
-      />
     </div>
   );
 };

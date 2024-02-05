@@ -1,12 +1,14 @@
 import styles from "./Header.module.css";
 import classnames from "classnames";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BasketModal } from "../BasketModal/BasketModal";
 import { NavLink } from "react-router-dom";
-import { Portfolio } from "../Portfolio/Portfolio";
+// import { ThemeContext } from "../../providers/theme";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
+
+  // const { theme, setTheme } = useContext(ThemeContext);
 
   const handleCartClick = () => {
     setCartModalOpen(true);
@@ -20,11 +22,12 @@ export const Header = () => {
     <>
       <div className={styles.header__container}>
         <div className={styles["header__image-container"]}>
-          <NavLink to="/"><img
-            className={styles["header__image"]}
-            src="../public/images/logo.png"
-          /></NavLink>
-
+          <NavLink to="/" className={styles["header__image-link"]}>
+            <img
+              className={styles["header__image"]}
+              src="../public/images/logo.png"
+            />
+          </NavLink>
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
@@ -62,6 +65,10 @@ export const Header = () => {
               Basket
             </li>
           </ul>
+          {/* <select onChange={(e) => setTheme(e.target.value)} defaultValue={theme}>
+            <option>light</option>
+            <option>dark</option>
+          </select> */}
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />

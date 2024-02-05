@@ -1,0 +1,13 @@
+.portfolio-image__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  height: 750px;
+  color: var(--main-text-color);
+}
+
+.portfolio-image__image {
+  width: 50%;
+  border-radius: 35px;
+}
