@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import portfolioData from "../../../../public/photos.json";
+import portfolioData from "../../../../public/images/photos.json"
 import styles from "./PortfolioImage.module.css";
 
 export const PortfolioImage = () => {
