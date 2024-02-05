@@ -63,11 +63,11 @@ export const Header = () => {
             >
               Basket
             </li>
-          </ul>
-          <select onChange={(e) => setTheme(e.target.value)} defaultValue={theme}>
+            <select onChange={(e) => setTheme(e.target.value)} defaultValue={theme}>
             <option>light</option>
             <option>dark</option>
           </select>
+          </ul>
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
