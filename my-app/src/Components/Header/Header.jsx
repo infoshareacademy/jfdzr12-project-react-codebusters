@@ -22,11 +22,12 @@ export const Header = () => {
     <>
       <div className={styles.header__container}>
         <div className={styles["header__image-container"]}>
-          <NavLink to="/"><img
-            className={styles["header__image"]}
-            src="../public/images/logo.png"
-          /></NavLink>
-
+          <NavLink to="/" className={styles["header__image-link"]}>
+            <img
+              className={styles["header__image"]}
+              src="../public/images/logo.png"
+            />
+          </NavLink>
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
@@ -68,7 +69,6 @@ export const Header = () => {
             <option>light</option>
             <option>dark</option>
           </select> */}
-
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />

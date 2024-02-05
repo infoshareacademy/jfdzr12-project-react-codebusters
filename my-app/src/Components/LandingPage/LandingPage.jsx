@@ -21,11 +21,15 @@ export const LandingPage = ({ quotes }) => {
         <div className={styles["info-left"]}>
           <p className={styles["info-left__text"]}>{quote}</p>
         </div>
-        <div className={styles["info-right"]}>
+        <div className={styles["info__image-container"]}>
           <img
+            className={styles["info__img"]}
+            src="../public/images/studio.png"
+          ></img>
+          {/* <img
             src="../public/images/img-info.jpg"
             className={styles["info-right__img"]}
-          />
+          /> */}
         </div>
       </div>
     </div>
