@@ -1,11 +1,11 @@
 :root {
-  --main-text-color: #655454;
-  --dark-text-color: #3f3f35;
-  --box-light-color: #f6f0ee;
-  --box-dark-color: #d8c2bd;
+  --main-text-color: #665858;
+  --dark-text-color: #605552;
+  --box-light-color: hsl(0, 50%, 99%);
+  --box-dark-color: #f0e5e3;
   --box-lighter-color: #e1d9d6;
   --colored-text-color: #89645b;
-  --dark-hover-color: #7c7979;
+  --dark-hover-color: #908b8b;
   --borders-color: #3f3f364d;
   --red-color: #ec7171;
   font-synthesis: none;
@@ -15,7 +15,7 @@
 }
 
 .main__container {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(52, 22, 22, 0.25);
   box-shadow: 0 8px 32px 0 var(--box-dark-color);
   margin: 50px;
   background: var(--box-light-color);

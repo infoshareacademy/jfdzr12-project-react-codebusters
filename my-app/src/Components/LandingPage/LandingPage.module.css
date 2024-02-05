@@ -1,26 +1,39 @@
 /* ------MAIN INFO-------> */
+
+.pricing__header {
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--main-text-color);
+  margin: 10px auto 80px;
+  font-family: "Dancing Script", cursive;
+}
+
+.container-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 750px;
+}
+
 .info__content-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  height: 500px;
-  margin-top: 10px;
+  flex-direction: row;
 }
 
 .info_header {
+  text-align: center;
+  font-weight: 800;
+  color: var(--main-text-color);
+  margin: 100px auto 80px;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 92px;
-  color: var(--box-dark-color);
-  text-shadow: 0 4px 4px #c0a59b, 0px -2px 1px #fff;
-  font-weight: bold;
-  letter-spacing: -4px;
-  text-align: center;
-  position: relative;
-  margin-top: 150px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 20px;
+  font-weight: 800;
+  text-shadow: 0 4px 4px var(--box-lighter-color), 0px -2px 1px #fff;
+  font-size: 3rem;
+  color: var(--colored-text-color);
 }
 
 .info-left {
