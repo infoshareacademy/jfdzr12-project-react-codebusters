@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
 import { NotFound } from "./Components/NotFound/NotFound";
 import { ThemeProvider } from "./providers/theme";
+import {Footer} from "./Components/Footer/Footer"
 
 function App() {
   const quotes = [
@@ -33,6 +34,7 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
       </ThemeProvider>
     </>
