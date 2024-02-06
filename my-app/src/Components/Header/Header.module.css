@@ -10,6 +10,13 @@
   border-bottom: 0.5px solid rgba(63, 63, 54, 30%);
 }
 
+.header__container.dark,
+.header__container.dark a {
+  /* Dark Theme */
+  background-color: #333 !important;
+  color: white !important;
+}
+
 .header__image-link {
   display: flex;
   flex-direction: column;

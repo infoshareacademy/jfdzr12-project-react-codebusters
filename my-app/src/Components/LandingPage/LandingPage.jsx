@@ -4,7 +4,7 @@ import { ThemeContext } from "../../providers/theme";
 
 export const LandingPage = ({ quotes }) => {
   const [quote, setQuote] = useState(quotes[0]);
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,11 +19,11 @@ export const LandingPage = ({ quotes }) => {
   return (
     <div className={styles[`container-info ${theme}`]}>
       <h1 className={styles["info_header"]}>LENS Studio</h1>
-      <div className={styles["info__content-container"]}>
+      <div className={styles["info__content-container ${theme}"]}>
         <div className={styles["info-left"]}>
           <p className={styles["info-left__text"]}>{quote}</p>
         </div>
-        <div className={styles["info__image-container"]}>
+        <div className={styles[`info__image-container ${theme}`]}>
           <img
             className={styles["info__img"]}
             src="../public/images/studio.png"

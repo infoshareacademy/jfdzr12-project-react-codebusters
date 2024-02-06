@@ -21,7 +21,12 @@
   background: var(--box-light-color);
 }
 
+.main__container.dark,
+.main__container.dark a {
+  background-color: #333 !important;
+  color: white !important;
 
+}
 
 
 /* JS MODAL */

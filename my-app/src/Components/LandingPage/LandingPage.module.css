@@ -5,12 +5,27 @@
   height: 750px;
 }
 
+.container-info.dark,
+.container-info.dark a {
+  /* Dark Theme */
+  background-color: #333 !important;
+  color: white !important;
+}
+
 .info__content-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
+
+.info__content-container.dark,
+.info__content-container.dark a {
+  /* Dark Theme */
+  background-color: #333 !important;
+  color: white !important;
+}
+
 
 .info_header {
   margin: 100px auto 80px;

@@ -7,7 +7,7 @@ import { ThemeContext } from "../../providers/theme";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const handleCartClick = () => {
     setCartModalOpen(true);
@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className={`styles.header__container ${theme}`}>
+      <div className={styles[`header__container ${theme}`]}>
         <div className={styles["header__image-container"]}>
           <NavLink to="/" className={styles["header__image-link"]}>
             <img
@@ -28,7 +28,7 @@ export const Header = () => {
             />
           </NavLink>
         </div>
-        <div className={styles["header__links-container"]}>
+        <div className={styles[`header__links-container ${theme}`]}>
           <ul className={styles["header__links"]}>
             <li
               className={classnames(
@@ -63,11 +63,14 @@ export const Header = () => {
             >
               Basket
             </li>
+            <select
+              onChange={toggleTheme}
+              defaultValue={theme}
+            >
+              <option value="light">light</option>
+              <option value="dark">dark</option>
+            </select>
           </ul>
-          <select onChange={(e) => setTheme(e.target.value)} defaultValue={theme}>
-            <option>light</option>
-            <option>dark</option>
-          </select>
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
