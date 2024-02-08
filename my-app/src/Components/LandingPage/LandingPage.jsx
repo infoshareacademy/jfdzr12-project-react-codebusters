@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import styles from "./LandingPage.module.css";
 import { ThemeContext } from "../../providers/theme";
 
@@ -17,7 +17,7 @@ export const LandingPage = ({ quotes }) => {
   }, [quotes]);
 
   return (
-    <div className={styles[`container-info ${theme}`]}>
+    <div className={styles["container-info"]}>
       <h1 className={styles["info_header"]}>LENS Studio</h1>
       <div className={styles["info__content-container"]}>
         <div className={styles["info-left"]}>
