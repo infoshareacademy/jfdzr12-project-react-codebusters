@@ -1,8 +1,11 @@
 import styles from "./Pricing.module.css";
-import classnames from "classnames";
 import { PricingPosition } from "./PricingPosition/PricingPosition";
+import { ThemeContext } from "../../providers/theme";
+import { useContext } from "react";
 
 export const Pricing = () => {
+  const { theme } = useContext(ThemeContext);
+
   const descriptionSinglePhotos = [
     "Already taken",
     "No modification",
@@ -60,7 +63,6 @@ export const Pricing = () => {
         <p>$200</p>
       </div>
       <div className={styles["pricing__description-container"]}>
-        <ul className={styles["pricing__description pricing__description-minus"]}>
           <li>Already taken</li>
           <li>No modification</li>
           <li>Single use</li>

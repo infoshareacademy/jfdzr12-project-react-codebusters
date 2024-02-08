@@ -1,11 +1,13 @@
 import styles from "./ContactForm.module.css";
 import classnames from "classnames";
 import { validateEmail } from "../../utils/validationEmail.js";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { ThemeContext } from "../../providers/theme.jsx";
 
 export const ContactForm = () => {
   const [emailMessage, setEmailMessage] = useState("");
   const inputEmailEl = useRef(null);
+  const { theme } = useContext(ThemeContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
