@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "./LandingPage.module.css";
-import { ThemeContext } from "../../providers/theme";
 
 export const LandingPage = ({ quotes }) => {
   const [quote, setQuote] = useState(quotes[0]);
-  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
