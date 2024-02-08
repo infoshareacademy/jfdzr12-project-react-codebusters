@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
 import { NotFound } from "./Components/NotFound/NotFound";
 import { ThemeProvider } from "./providers/theme";
-import {Footer} from "./Components/Footer/Footer"
+import { Footer } from "./Components/Footer/Footer";
 
 function App() {
   const quotes = [
@@ -19,23 +19,23 @@ function App() {
   return (
     <>
       <ThemeProvider>
-      <BrowserRouter>
-        <Header />
-        <div className="main__container">
-          <Routes>
-            <Route path="/" element={<LandingPage quotes={quotes} />}></Route>
-            <Route path="/portfolio" element={<Portfolio />}></Route>
-            <Route path="/pricing" element={<Pricing />}></Route>
-            <Route path="/contactform" element={<ContactForm />}></Route>
-            <Route
-              path="/portfolio/:imageId"
-              element={<PortfolioImage />}
-            ></Route>
-            <Route path="*" element={<NotFound />}></Route>
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <div className="main__container">
+            <Routes>
+              <Route path="/" element={<LandingPage quotes={quotes} />}></Route>
+              <Route path="/portfolio" element={<Portfolio />}></Route>
+              <Route path="/pricing" element={<Pricing />}></Route>
+              <Route path="/contactform" element={<ContactForm />}></Route>
+              <Route
+                path="/portfolio/:imageId"
+                element={<PortfolioImage />}
+              ></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
       </ThemeProvider>
     </>
   );

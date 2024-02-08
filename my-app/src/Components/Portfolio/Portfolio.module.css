@@ -70,3 +70,13 @@
   font-size: 2rem;
   text-wrap: wrap;
 }
+
+.light {
+  background: var(--box-light-color-light);
+  color: var(--main-text-color-light);
+}
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+}

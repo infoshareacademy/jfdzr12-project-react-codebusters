@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
-import portfolioData from "../../../../public/images/photos.json"
+import portfolioData from "../../../../public/photos.json";
 import styles from "./PortfolioImage.module.css";
+import { ThemeContext } from "../../../providers/theme";
+import { useContext } from "react";
 
 export const PortfolioImage = () => {
   const { imageId } = useParams();
   const photo = portfolioData.photos.find((el) => el.id === parseInt(imageId));
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={styles["portfolio-image__content"]}>

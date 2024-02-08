@@ -17,21 +17,21 @@ export const LandingPage = ({ quotes }) => {
   }, [quotes]);
 
   return (
-    <div className={styles[`container-info ${theme}`]}>
-      <h1 className={styles["info_header"]}>LENS Studio</h1>
-      <div className={styles["info__content-container ${theme}"]}>
+    <div className={`${styles["container-info"]} ${styles[theme]}`}>
+      <h1 className={`${styles["info_header"]} ${styles[theme]}`}>
+        LENS Studio
+      </h1>
+      <div className={styles["info__content-container"]}>
         <div className={styles["info-left"]}>
-          <p className={styles["info-left__text"]}>{quote}</p>
+          <p className={`${styles["info-left__text"]} ${styles[theme]}`}>
+            {quote}
+          </p>
         </div>
         <div className={styles[`info__image-container ${theme}`]}>
           <img
             className={styles["info__img"]}
             src="../public/images/studio.png"
           ></img>
-          {/* <img
-            src="../public/images/img-info.jpg"
-            className={styles["info-right__img"]}
-          /> */}
         </div>
       </div>
     </div>
