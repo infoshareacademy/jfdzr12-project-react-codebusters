@@ -7,7 +7,7 @@ import { ContactForm } from "./Components/ContactForm/ContactForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
 import { NotFound } from "./Components/NotFound/NotFound";
-import { ThemeProvider } from "./providers/theme";
+// import { ThemeProvider } from "./providers/theme";
 
 function App() {
   const quotes = [
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <ThemeProvider>
+      {/* <ThemeProvider> */}
       <BrowserRouter>
         <Header />
         <div className="main__container">
@@ -34,7 +34,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 }
