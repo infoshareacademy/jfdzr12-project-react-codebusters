@@ -1,10 +1,13 @@
 import styles from "./Portfolio.module.css";
 import portfolioData from "../../../public/photos.json";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../providers/theme";
 
 export const Portfolio = () => {
   const [imageId, setImageId] = useState(null);
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className={styles["portfolio__container"]} id="portfolio">
       <h1 className={styles["portfolio__header"]}>Our portfolio</h1>

@@ -1,6 +1,10 @@
 import styles from "./NotFound.module.css";
+import { ThemeContext } from "../../providers/theme";
+import { useContext } from "react";
 
 export const NotFound = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className={styles["not-found__container"]}>
       <div className={styles["not-found__container-info"]}>

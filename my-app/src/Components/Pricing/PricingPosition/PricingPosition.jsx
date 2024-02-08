@@ -1,7 +1,11 @@
 import styles from "./PricingPosition.module.css";
 import classnames from "classnames";
+import { ThemeContext } from "../../../providers/theme";
+import { useContext } from "react";
 
 export const PricingPosition = (props) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <>
       <div className={styles["pricing__option--single"]}>

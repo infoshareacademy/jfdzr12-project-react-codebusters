@@ -3,12 +3,11 @@ import classnames from "classnames";
 import React, { useContext, useState } from "react";
 import { BasketModal } from "../BasketModal/BasketModal";
 import { NavLink } from "react-router-dom";
-// import { ThemeContext } from "../../providers/theme";
+import { ThemeContext } from "../../providers/theme";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
-
-  // const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const handleCartClick = () => {
     setCartModalOpen(true);
@@ -65,10 +64,14 @@ export const Header = () => {
               Basket
             </li>
           </ul>
-          {/* <select onChange={(e) => setTheme(e.target.value)} defaultValue={theme}>
+
+          <select
+            onChange={(e) => setTheme(e.target.value)}
+            defaultValue={theme}
+          >
             <option>light</option>
             <option>dark</option>
-          </select> */}
+          </select>
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />

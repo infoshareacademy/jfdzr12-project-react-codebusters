@@ -1,8 +1,10 @@
 import styles from "./BasketModal.module.css";
 import { Modal } from "../Modal/Modal.jsx";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../../providers/theme.jsx";
 
 export const BasketModal = ({ isOpen, onClose }) => {
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -34,7 +36,7 @@ export const BasketModal = ({ isOpen, onClose }) => {
 
         <Modal>
           <button
-            className={styles["basket-modal__button-close"]}
+            className={`${styles["basket-modal__button-close"]} ${styles[theme]}`}
             onClick={onClose}
           >
             x

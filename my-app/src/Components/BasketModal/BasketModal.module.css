@@ -5,11 +5,18 @@
   margin-right: 16px;
   height: 24px;
   width: 24px;
-  color: var(--dark-text-color);
-  background-color: var(--box-dark-color);
   border: none;
-  color: var(--dark-text-color);
   transition: 0.4s;
+}
+
+.light {
+  background-color: var(--box-dark-color-light);
+  color: var(--dark-text-color-light);
+}
+
+.dark {
+  background-color: var(--box-dark-color-dark);
+  color: var(--dark-text-color-dark);
 }
 
 .basket-modal__overlay {

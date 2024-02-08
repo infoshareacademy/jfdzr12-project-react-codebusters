@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./LandingPage.module.css";
+import { ThemeContext } from "../../providers/theme";
 
 export const LandingPage = ({ quotes }) => {
   const [quote, setQuote] = useState(quotes[0]);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,10 +28,6 @@ export const LandingPage = ({ quotes }) => {
             className={styles["info__img"]}
             src="../public/images/studio.png"
           ></img>
-          {/* <img
-            src="../public/images/img-info.jpg"
-            className={styles["info-right__img"]}
-          /> */}
         </div>
       </div>
     </div>
