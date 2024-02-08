@@ -14,12 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* /// */
   --main-text-color-light: #665858;
-  --main-text-color-dark: #665858;
+  --main-text-color-dark: #ddd4d4;
 
   --dark-text-color-light: #605552;
-  --dark-text-color-dark: #605552;
+  --dark-text-color-dark: #bfafab;
 
   --box-light-color-light: #ffffff;
   --box-light-color-dark: #685151;
