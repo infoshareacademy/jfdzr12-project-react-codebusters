@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext("theme");
 
@@ -11,6 +11,10 @@ export const ThemeProvider = ({ children }) => {
   const toggleDarkTheme = () => {
     setTheme("dark");
   };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   console.log(theme);
   return (
