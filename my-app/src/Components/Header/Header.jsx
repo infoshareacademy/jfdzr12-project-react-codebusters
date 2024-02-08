@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className={styles.header__container}>
+      <div className={`${styles["header__container"]} ${styles[theme]}`}>
         <div className={styles["header__image-container"]}>
           <NavLink to="/" className={styles["header__image-link"]}>
             <img
@@ -33,7 +33,8 @@ export const Header = () => {
             <li
               className={classnames(
                 styles.header__link,
-                styles["header__links--examples"]
+                styles["header__links--examples"],
+                styles[theme]
               )}
             >
               <NavLink to="/portfolio">Portfolio</NavLink>
@@ -64,17 +65,23 @@ export const Header = () => {
               Basket
             </li>
           </ul>
-          <div>
-            {theme === "light" ? (
-              <button onClick={toggleDarkTheme}>
-                <img src="../public/images/night_light.png" />
-              </button>
-            ) : (
-              <button onClick={toggleLightTheme}>
-                <img src="../public/images/day_light.png" />
-              </button>
-            )}
-          </div>
+        </div>
+        <div className={styles["header__theme-buttons-container"]}>
+          {theme === "light" ? (
+            <button
+              className={`${styles["header__theme-button"]} ${styles[theme]}`}
+              onClick={toggleDarkTheme}
+            >
+              <img src="../public/images/night_light.png" />
+            </button>
+          ) : (
+            <button
+              className={`${styles["header__theme-button"]} ${styles[theme]}`}
+              onClick={toggleLightTheme}
+            >
+              <img src="../public/images/day_light.png" />
+            </button>
+          )}
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
