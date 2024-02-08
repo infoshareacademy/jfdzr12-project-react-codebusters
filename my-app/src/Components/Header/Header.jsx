@@ -7,7 +7,7 @@ import { ThemeContext } from "../../providers/theme";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, toggleLightTheme, toggleDarkTheme } = useContext(ThemeContext);
 
   const handleCartClick = () => {
     setCartModalOpen(true);
@@ -64,14 +64,17 @@ export const Header = () => {
               Basket
             </li>
           </ul>
-
-          <select
-            onChange={(e) => setTheme(e.target.value)}
-            defaultValue={theme}
-          >
-            <option>light</option>
-            <option>dark</option>
-          </select>
+          <div>
+            {theme === "light" ? (
+              <button onClick={toggleDarkTheme}>
+                <img src="../public/images/night_light.png" />
+              </button>
+            ) : (
+              <button onClick={toggleLightTheme}>
+                <img src="../public/images/day_light.png" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
