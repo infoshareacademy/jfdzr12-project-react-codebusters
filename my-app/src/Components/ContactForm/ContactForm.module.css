@@ -1,3 +1,7 @@
+.contact-form__container {
+  display: flex;
+}
+
 .modal {
   color: var(--main-text-color);
   height: 980px;
@@ -84,4 +88,14 @@
   margin: 0;
   color: red;
   font-size: 0.9rem;
+}
+
+.light {
+  background: var(--box-light-color-light);
+  color: var(--main-text-color-light);
+}
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
 }
