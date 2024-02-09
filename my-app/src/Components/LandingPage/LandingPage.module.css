@@ -33,7 +33,6 @@
   font-size: 20px;
   letter-spacing: 2px;
   word-spacing: 5px;
-  color: var(--main-text-color);
   justify-self: center;
   text-align: center;
   margin: 20px 0px 20px 40px;
@@ -52,6 +51,7 @@
 
 .info__img {
   width: 50%;
+  border-radius: 20px;
 }
 
 .light {
