@@ -21,3 +21,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.light {
+  background: var(--box-light-color-light);
+  color: var(--main-text-color-light);
+}
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+}
