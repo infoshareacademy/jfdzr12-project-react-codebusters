@@ -20,13 +20,15 @@ export const Header = () => {
   return (
     <>
       <div className={`${styles["header__container"]} ${styles[theme]}`}>
-        <div className={styles["header__image-container"]}>
-          <NavLink to="/" className={styles["header__image-link"]}>
-            <img
-              className={styles["header__image"]}
-              src="../public/images/logo.png"
-            />
-          </NavLink>
+        <div className={styles["header__image-border-container"]}>
+          <div className={styles["header__image-container"]}>
+            <NavLink to="/" className={styles["header__image-link"]}>
+              <img
+                className={styles["header__image"]}
+                src="../public/images/logo.png"
+              />
+            </NavLink>
+          </div>
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
