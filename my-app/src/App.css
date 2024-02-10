@@ -1,11 +1,11 @@
 :root {
-  --main-text-color: #665858;
-  --dark-text-color: #605552;
+  --main-text-color: #3e3e4f;
+  --dark-text-color: #555260;
   --box-light-color: #ffffff;
   --box-dark-color: #f0e5e3;
   --box-lighter-color: #e1d9d6;
-  --colored-text-color: #89645b;
-  --dark-hover-color: #908b8b;
+  --colored-text-color: #5d5b89;
+  --dark-hover-color: #8c8b90;
   --borders-color: #3f3f364d;
 
   --red-color: #ec7171;
@@ -14,31 +14,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --main-text-color-light: #665858;
+  --main-text-color-light: #5c5866;
   --main-text-color-dark: #ddd4d4;
 
-  --dark-text-color-light: #605552;
-  --dark-text-color-dark: #bfafab;
+  --dark-text-color-light: #555260;
+  --dark-text-color-dark: #b1abbf;
 
   --box-light-color-light: #ffffff;
-  --box-light-color-dark: #2a2222;
+  --box-light-color-dark: #2a2930;
 
   --box-dark-color-light: #f0e5e3;
-  --box-dark-color-dark: #4d4444;
+  --box-dark-color-dark: #46444d;
 
   --box-lighter-color-light: #e1d9d6;
-  --box-lighter-color-dark: #73625b;
+  --box-lighter-color-dark: #5e5b73;
 
-  --colored-text-color-light: #89645b;
-  --colored-text-color-dark: #b89a93;
+  --colored-text-color-light: #6b5b89;
+  --colored-text-color-dark: #9b93b8;
 
-  --dark-hover-color-light: #908b8b;
+  --dark-hover-color-light: #8c8b90;
   --dark-hover-color-dark: #d2caca;
 
   --borders-color-light: #3f3f364d;
-  --borders-color-dark: #2a2a259f;
+  --borders-color-dark: #26252a9f;
 
-  --shadow-color-dark: #161414;
+  --shadow-color-dark: #151416;
 }
 
 .main__container {
