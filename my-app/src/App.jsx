@@ -9,7 +9,6 @@ import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioi
 import { NotFound } from "./Components/NotFound/NotFound";
 import { ThemeProvider } from "./providers/theme";
 import { Footer } from "./Components/Footer/Footer";
-import { Footer } from "./Components/Footer/Footer";
 
 function App() {
   const quotes = [

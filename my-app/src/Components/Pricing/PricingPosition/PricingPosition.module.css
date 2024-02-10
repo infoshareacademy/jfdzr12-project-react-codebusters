@@ -73,6 +73,7 @@
 
 .dark.pricing__content {
   background-color: var(--box-dark-color-dark);
+  border-radius: 20px;
 }
 .dark.pricing__content-header {
   background-color: var(--box-dark-color-dark);
@@ -80,8 +81,4 @@
 
 .dark.pricing__description {
 background-color: var(--box-dark-color-dark);
-}
-
-.dark.pricing__option--single {
-  background-color: var(--box-dark-color-dark);
 }
