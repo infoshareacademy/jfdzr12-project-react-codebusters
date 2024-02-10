@@ -37,6 +37,8 @@
 
   --borders-color-light: #3f3f364d;
   --borders-color-dark: #2a2a259f;
+
+  --shadow-color-dark: #161414;
 }
 
 .main__container {

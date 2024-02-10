@@ -22,14 +22,14 @@ export const ContactForm = () => {
       className={classnames(styles["contact-form__container"], styles[theme])}
     >
       <div className={classnames(styles["modal"])} id="contact">
-        <h1 className={classnames(styles["modal__header"])}>Contact us</h1>
+        <h1 className={classnames(styles["modal__header"], styles[theme])}>Contact us</h1>
         <form
           action=""
           method="get"
           className={classnames(styles["modal__form"])}
           onSubmit={handleSubmit}
         >
-          <label htmlFor="title" className={classnames(styles["form__label"])}>
+          <label htmlFor="title" className={classnames(styles["form__label"], styles[theme])}>
             Title
           </label>
           <input
@@ -43,7 +43,7 @@ export const ContactForm = () => {
             )}
             required
           />
-          <label htmlFor="email" className={classnames(styles["form__label"])}>
+          <label htmlFor="email" className={classnames(styles["form__label"], styles[theme])}>
             Email
           </label>
           <input
@@ -63,7 +63,7 @@ export const ContactForm = () => {
           </p>
           <label
             htmlFor="message"
-            className={classnames(styles["form__label"])}
+            className={classnames(styles["form__label"], styles[theme])}
           >
             Message
           </label>
@@ -71,7 +71,7 @@ export const ContactForm = () => {
             placeholder=""
             id="message"
             className={classnames(
-              styles["form__input"],
+              styles["form__input" ],
               styles["form__input--textarea"]
             )}
             minLength="20"
@@ -85,7 +85,8 @@ export const ContactForm = () => {
             value="Send"
             className={classnames(
               styles["form__input"],
-              styles["form__input--submit"]
+              styles["form__input--submit"], 
+              styles[theme]
             )}
           />
         </form>
