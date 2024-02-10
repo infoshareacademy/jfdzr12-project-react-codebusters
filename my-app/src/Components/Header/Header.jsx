@@ -28,7 +28,7 @@ export const Header = () => {
             />
           </NavLink>
         </div>
-        <div className={styles[`header__links-container ${theme}`]}>
+        <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
             <li
               className={classnames(
@@ -64,13 +64,6 @@ export const Header = () => {
             >
               Basket
             </li>
-            <select
-              onChange={toggleTheme}
-              defaultValue={theme}
-            >
-              <option value="light">light</option>
-              <option value="dark">dark</option>
-            </select>
           </ul>
         </div>
         <div className={styles["header__theme-buttons-container"]}>

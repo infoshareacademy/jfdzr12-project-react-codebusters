@@ -4,7 +4,7 @@ import { ThemeContext } from "../../providers/theme";
 
 export const LandingPage = ({ quotes }) => {
   const [quote, setQuote] = useState(quotes[0]);
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +27,7 @@ export const LandingPage = ({ quotes }) => {
             {quote}
           </p>
         </div>
-        <div className={styles[`info__image-container ${theme}`]}>
+        <div className={styles["info__image-container"]}>
           <img
             className={styles["info__img"]}
             src="../public/images/studio.png"

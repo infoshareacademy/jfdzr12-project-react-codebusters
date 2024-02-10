@@ -8,17 +8,18 @@ export const PricingPosition = (props) => {
 
   return (
     <>
-      <div className={styles["pricing__option--single"]}>
-        <div className={styles["pricing__content"]}>
-          <h3 className={styles["pricing__content-header"]}>{props.title}</h3>
-          <div className={styles["pricing__value-container"]}>
+      <div className={classnames(styles["pricing__option--single"], styles[theme])}>
+        <div className={classnames(styles["pricing__content"], styles[theme])}>
+          <h3 className={`${styles["pricing__content-header"]} ${styles[theme]}`}>{props.title}</h3>
+          <div className={classnames(styles["pricing__value-container"], styles[theme])}>
             <p>{props.price}</p>
           </div>
           <div className={styles["pricing__description-container"]}>
             <ul
               className={classnames(
                 styles["pricing__description"],
-                styles["pricing__description-minus"]
+                styles["pricing__description-minus"],
+                styles[theme]
               )}
             >
               {props.description.map((el, index) => {
