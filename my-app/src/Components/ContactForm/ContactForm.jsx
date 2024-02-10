@@ -21,15 +21,20 @@ export const ContactForm = () => {
     <div
       className={classnames(styles["contact-form__container"], styles[theme])}
     >
+      <h1 className={classnames(styles["modal__header"], styles[theme])}>
+        Contact us
+      </h1>
       <div className={classnames(styles["modal"])} id="contact">
-        <h1 className={classnames(styles["modal__header"], styles[theme])}>Contact us</h1>
         <form
           action=""
           method="get"
           className={classnames(styles["modal__form"])}
           onSubmit={handleSubmit}
         >
-          <label htmlFor="title" className={classnames(styles["form__label"], styles[theme])}>
+          <label
+            htmlFor="title"
+            className={classnames(styles["form__label"], styles[theme])}
+          >
             Title
           </label>
           <input
@@ -39,11 +44,15 @@ export const ContactForm = () => {
             name="title"
             className={classnames(
               styles["form__input"],
-              styles["form__input--text"]
+              styles["form__input--text"],
+              styles[theme]
             )}
             required
           />
-          <label htmlFor="email" className={classnames(styles["form__label"], styles[theme])}>
+          <label
+            htmlFor="email"
+            className={classnames(styles["form__label"], styles[theme])}
+          >
             Email
           </label>
           <input
@@ -54,7 +63,8 @@ export const ContactForm = () => {
             name="email"
             className={classnames(
               styles["form__input"],
-              styles["form__input--email"]
+              styles["form__input--email"],
+              styles[theme]
             )}
             required
           />
@@ -71,8 +81,9 @@ export const ContactForm = () => {
             placeholder=""
             id="message"
             className={classnames(
-              styles["form__input" ],
-              styles["form__input--textarea"]
+              styles["form__input"],
+              styles["form__input--textarea"],
+              styles[theme]
             )}
             minLength="20"
             name="message"
@@ -85,7 +96,7 @@ export const ContactForm = () => {
             value="Send"
             className={classnames(
               styles["form__input"],
-              styles["form__input--submit"], 
+              styles["form__input--submit"],
               styles[theme]
             )}
           />

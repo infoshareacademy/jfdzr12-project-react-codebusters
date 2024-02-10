@@ -1,15 +1,26 @@
 .contact-form__container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__header {
+  margin: 100px auto 80px;
+  text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: 800;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 .modal {
   color: var(--main-text-color);
-  height: 980px;
+  height: 500px;
   width: 500px;
   border-radius: 20px;
-  margin: 60px auto 0;
   padding-bottom: 20px;
-  padding-top: 100px;
 }
 
 .modal__form {
@@ -22,16 +33,6 @@
   border: 0.5px solid rgba(63, 63, 54, 30%);
   box-shadow: 0 8px 32px 0 var(--box-dark-color);
   border-radius: 20px;
-}
-
-.modal__header {
-  margin: 0px auto 40px;
-  text-align: center;
-  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  font-weight: 800;
-  color: var(--main-text-color);
-  text-transform: uppercase;
-  font-size: 2.4rem;
 }
 
 .form__label {
@@ -93,7 +94,10 @@
 .dark {
   background: var(--box-light-color-dark);
   color: var(--main-text-color-dark);
+}
 
+.dark.form__input {
+  box-shadow: none;
 }
 
 .dark.form__input--submit {
