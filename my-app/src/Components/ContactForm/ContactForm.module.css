@@ -90,12 +90,16 @@
   font-size: 0.9rem;
 }
 
-.light {
-  background: var(--box-light-color-light);
-  color: var(--main-text-color-light);
-}
-
 .dark {
   background: var(--box-light-color-dark);
   color: var(--main-text-color-dark);
+
+}
+
+.dark.form__input--submit {
+  background-color: var(--box-dark-color-dark);
+}
+
+.dark .modal__form {
+  box-shadow: 0 8px 32px 0 var(--shadow-color-dark);
 }

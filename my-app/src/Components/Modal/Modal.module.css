@@ -18,3 +18,17 @@
 .modal__content {
   margin: 20px;
 }
+
+.light {
+  background: var(--box-light-color-light);
+  color: var(--main-text-color-light);
+}
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+}
+
+.dark.modal__container {
+  box-shadow: 0px 0px 36px -24px var(--shadow-color-dark);
+}

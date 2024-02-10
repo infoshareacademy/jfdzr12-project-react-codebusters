@@ -56,6 +56,7 @@
   height: 150px;
   border-radius: 25px;
   transition: 0.5s all ease-in-out;
+  border: 2px solid var(--box-light-color-dark)
 }
 
 .portfolio__photo:hover {
@@ -79,4 +80,8 @@
 .dark {
   background: var(--box-light-color-dark);
   color: var(--main-text-color-dark);
+}
+
+.dark .portfolio__photo {
+  border: 2px solid white;
 }

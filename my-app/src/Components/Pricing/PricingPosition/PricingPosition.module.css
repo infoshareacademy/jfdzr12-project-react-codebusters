@@ -61,3 +61,24 @@
 .pricing__description-plus {
   list-style-type: "+ ";
 }
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+}
+
+.dark .pricing__value-container {
+  background-color: var(--box-lighter-color-dark);
+}
+
+.dark.pricing__content {
+  background-color: var(--box-dark-color-dark);
+  border-radius: 20px;
+}
+.dark.pricing__content-header {
+  background-color: var(--box-dark-color-dark);
+}
+
+.dark.pricing__description {
+background-color: var(--box-dark-color-dark);
+}
