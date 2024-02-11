@@ -1,7 +1,7 @@
 import "./App.css";
 import { Header } from "./Components/Header/Header";
-import { LandingPage } from "./Components/LandingPage/LandingPage";
-import { Portfolio } from "./Components/Portfolio/Portfolio";
+import { LandingPage } from "./Components/LandingPage/LandingPage.tsx";
+import { Portfolio } from "./Components/Portfolio/Portfolio.tsx";
 import { Pricing } from "./Components/Pricing/Pricing";
 import { ContactForm } from "./Components/ContactForm/ContactForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

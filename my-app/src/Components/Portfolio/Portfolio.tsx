@@ -2,20 +2,21 @@ import styles from "./Portfolio.module.css";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../providers/theme";
+import { PortfolioInterface } from "./Portfolio.types";
+
 
 export const Portfolio = () => {
   const [imageId, setImageId] = useState(null);
   const { theme } = useContext(ThemeContext);
 
-  const [portfolioData, setPortfolioData] = useState(null);
+  const [portfolioData, setPortfolioData] = useState<PortfolioInterface | null>(null);
 
   useEffect(() => {
     fetch("/photos.json")
       .then((res) => res.json())
-      .then((data) => {
-        setPortfolioData(data);
-        console.log(data);
-      });
+      .then((data) => 
+        setPortfolioData(data)
+      );
   }, []);
   return (
     portfolioData && (

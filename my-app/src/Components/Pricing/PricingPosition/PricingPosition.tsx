@@ -2,8 +2,6 @@ import styles from "./PricingPosition.module.css";
 import classnames from "classnames";
 import { ThemeContext } from "../../../providers/theme";
 import { ReactElement, useContext } from "react";
-
-
 import { PricingPositionProps } from "./PricingPosition.types";
 
 
