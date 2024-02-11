@@ -1,13 +1,19 @@
 import { FC, PropsWithChildren, createContext, useEffect, useState } from "react";
 
 
-type ContextType = { theme:string, toggleLightTheme:()=>void, toggleDarkTheme:() => void };
+type ContextType = { theme:"light"|"dark", toggleLightTheme:()=>void, toggleDarkTheme:() => void };
   
-export const ThemeContext = createContext<ContextType | string>("theme");
+export const ThemeContext = createContext<ContextType>({
+  theme: "light",
+  toggleLightTheme: () => {},
+  toggleDarkTheme: () => {}
+});
 
 export const ThemeProvider:FC = ({ children }:PropsWithChildren) => {
-  const [theme, setTheme] = useState("light");
-  const toggleLightTheme = () => {
+  
+    const [theme, setTheme] = useState<ContextType["theme"]>("light");
+
+  const toggleLightTheme = ():void  => {
     setTheme("light");
   };
 

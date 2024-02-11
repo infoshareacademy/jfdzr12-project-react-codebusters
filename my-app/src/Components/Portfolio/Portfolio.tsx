@@ -6,7 +6,7 @@ import { PortfolioInterface } from "./Portfolio.types";
 
 
 export const Portfolio = () => {
-  const [imageId, setImageId] = useState(null);
+  const [setImageId] = useState(null);
   const { theme } = useContext(ThemeContext);
 
   const [portfolioData, setPortfolioData] = useState<PortfolioInterface | null>(null);

@@ -6,7 +6,7 @@ import { PricingPositionProps } from "./PricingPosition.types";
 
 
 export const PricingPosition = ({title, price, description}:PricingPositionProps):ReactElement => {
-    //@ts-expect-error
+     
     const { theme } = useContext(ThemeContext);
 
     return (

@@ -6,8 +6,6 @@ import { LandingPageProps } from "./LandingPage.types";
 export const LandingPage = ({ quotes }:LandingPageProps):ReactElement => {
   const [quote, setQuote] = useState<string>(quotes[0]);
 
-
-      //@ts-expect-error
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
