@@ -8,10 +8,24 @@ export const PricingPosition = (props) => {
 
   return (
     <>
-      <div className={classnames(styles["pricing__option--single"], styles[theme])}>
+      <div
+        className={classnames(styles["pricing__option--single"], styles[theme])}
+      >
         <div className={classnames(styles["pricing__content"], styles[theme])}>
-          <h3 className={`${styles["pricing__content-header"]} ${styles[theme]}`}>{props.title}</h3>
-          <div className={classnames(styles["pricing__value-container"], styles[theme])}>
+          <h3
+            className={classnames(
+              styles["pricing__content-header"],
+              styles[theme]
+            )}
+          >
+            {props.title}
+          </h3>
+          <div
+            className={classnames(
+              styles["pricing__value-container"],
+              styles[theme]
+            )}
+          >
             <p>{props.price}</p>
           </div>
           <div className={styles["pricing__description-container"]}>
