@@ -37,7 +37,6 @@
   margin: 0 60px 5px;
   font-weight: bold;
   align-self: flex-start;
-  /* color: var(--main-text-color); */
 }
 
 .form__input--text,
