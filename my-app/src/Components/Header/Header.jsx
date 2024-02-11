@@ -3,7 +3,7 @@ import classnames from "classnames";
 import React, { useContext, useState } from "react";
 import { BasketModal } from "../BasketModal/BasketModal";
 import { NavLink } from "react-router-dom";
-import { ThemeContext } from "../../providers/theme";
+import { ThemeContext } from "../../providers/theme.tsx";
 
 export const Header = () => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);

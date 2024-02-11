@@ -7,7 +7,7 @@ import { ContactForm } from "./Components/ContactForm/ContactForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
 import { NotFound } from "./Components/NotFound/NotFound";
-import { ThemeProvider } from "./providers/theme";
+import { ThemeProvider } from "./providers/theme.tsx";
 import { Footer } from "./Components/Footer/Footer";
 
 function App() {

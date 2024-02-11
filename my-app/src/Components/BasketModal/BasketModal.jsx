@@ -1,7 +1,7 @@
 import styles from "./BasketModal.module.css";
 import { Modal } from "../Modal/Modal.jsx";
 import { useContext, useEffect } from "react";
-import { ThemeContext } from "../../providers/theme.jsx";
+import { ThemeContext } from "../../providers/theme.tsx";
 
 export const BasketModal = ({ isOpen, onClose }) => {
   const { theme } = useContext(ThemeContext);

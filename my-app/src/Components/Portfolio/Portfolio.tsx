@@ -1,7 +1,7 @@
 import styles from "./Portfolio.module.css";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../../providers/theme";
+import { ThemeContext } from "../../providers/theme.tsx";
 import { PortfolioInterface } from "./Portfolio.types";
 
 
