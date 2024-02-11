@@ -12,7 +12,6 @@
 }
 
 .pricing__content-header {
-  color: var(--main-text-color);
   text-align: center;
   position: relative;
   top: 30px;
@@ -21,7 +20,6 @@
 }
 
 .pricing__value-container {
-  background-color: var(--box-lighter-color);
   border-radius: 20px;
   padding: 10px 20px;
   position: relative;
@@ -30,17 +28,11 @@
   width: 240px;
   font-weight: bold;
   font-size: 1.8rem;
-  color: var(--colored-text-color);
   text-align: center;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   text-transform: lowercase;
   font-size: 2rem;
   transition: 0.4s;
-}
-
-.pricing__value-container:hover {
-  background-color: var(--colored-text-color);
-  color: var(--box-light-color);
 }
 
 .pricing__description {
@@ -62,13 +54,32 @@
   list-style-type: "+ ";
 }
 
+/* .light {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+} */
+
 .dark {
   background: var(--box-light-color-dark);
   color: var(--main-text-color-dark);
 }
 
+.light .pricing__value-container {
+  background-color: var(--box-lighter-color-light);
+}
+
+.light .pricing__value-container:hover {
+  background-color: var(--colored-text-color-light);
+  color: var(--box-light-color-light);
+}
+
 .dark .pricing__value-container {
   background-color: var(--box-lighter-color-dark);
+}
+
+.dark .pricing__value-container:hover {
+  background-color: var(--dark-hover-color-dark);
+  color: var(--box-light-color-dark);
 }
 
 .dark.pricing__content {
@@ -80,5 +91,5 @@
 }
 
 .dark.pricing__description {
-background-color: var(--box-dark-color-dark);
+  background-color: var(--box-dark-color-dark);
 }

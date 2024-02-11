@@ -25,7 +25,10 @@ export const Pricing = () => {
   return (
     <>
       <div className={classnames(styles["pricing__container"], styles[theme])}>
-        <h1 className={`${styles["pricing_header"]} ${styles[theme]}`}>Our pricing</h1>
+        <h1 className={classnames(styles["pricing__header"], styles[theme])}>
+          Our pricing
+        </h1>
+
         <div className={styles["pricing__content-container"]}>
           <PricingPosition
             title="single photo price"
