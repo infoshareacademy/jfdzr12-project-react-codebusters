@@ -1,12 +1,10 @@
 .pricing__content {
   width: 200px;
   height: 350px;
+  border-radius: 20px;
 }
 
-.pricing__option--single,
-.pricing__option--pack,
-.pricing__option--custom {
-  background-color: var(--box-dark-color);
+.pricing__option {
   margin: 30px;
   border-radius: 20px;
 }
@@ -46,24 +44,6 @@
   text-transform: lowercase;
 }
 
-.pricing__description-minus {
-  list-style-type: "- ";
-}
-
-.pricing__description-plus {
-  list-style-type: "+ ";
-}
-
-/* .light {
-  background: var(--box-light-color-dark);
-  color: var(--main-text-color-dark);
-} */
-
-.dark {
-  background: var(--box-light-color-dark);
-  color: var(--main-text-color-dark);
-}
-
 .light .pricing__value-container {
   background-color: var(--box-lighter-color-light);
 }
@@ -82,14 +62,26 @@
   color: var(--box-light-color-dark);
 }
 
-.dark.pricing__content {
-  background-color: var(--box-dark-color-dark);
-  border-radius: 20px;
+.light.pricing__content {
+  background: var(--box-dark-color-light);
 }
-.dark.pricing__content-header {
+
+.dark.pricing__content {
   background-color: var(--box-dark-color-dark);
 }
 
+.light.pricing__content-header {
+  color: var(--main-text-color-light);
+}
+
+.dark.pricing__content-header {
+  color: var(--main-text-color-dark);
+}
+
+.light.pricing__description {
+  color: var(--main-text-color-light);
+}
+
 .dark.pricing__description {
-  background-color: var(--box-dark-color-dark);
+  color: var(--main-text-color-dark);
 }
