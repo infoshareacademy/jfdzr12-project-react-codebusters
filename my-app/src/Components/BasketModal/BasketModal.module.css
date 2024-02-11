@@ -9,13 +9,13 @@
   transition: 0.4s;
 }
 
-.light {
+.light.basket-modal__button-close {
   background-color: var(--box-dark-color-light);
   color: var(--dark-text-color-light);
 }
 
-.dark {
-  background-color: var(--box-dark-color-dark);
+.dark.basket-modal__button-close {
+  background-color: var(--box-lighter-color-dark);
   color: var(--dark-text-color-dark);
 }
 
