@@ -1,0 +1,33 @@
+.pricing__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 750px;
+}
+
+.pricing__header {
+  margin: 10px auto 80px;
+  text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: 800;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+.pricing__content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  background: var(--box-light-color-light);
+  color: var(--main-text-color-light);
+}
+
+.dark {
+  background: var(--box-light-color-dark);
+  color: var(--main-text-color-dark);
+}
