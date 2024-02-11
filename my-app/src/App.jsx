@@ -1,13 +1,13 @@
 import "./App.css";
 import { Header } from "./Components/Header/Header";
-import { LandingPage } from "./Components/LandingPage/LandingPage";
-import { Portfolio } from "./Components/Portfolio/Portfolio";
+import { LandingPage } from "./Components/LandingPage/LandingPage.tsx";
+import { Portfolio } from "./Components/Portfolio/Portfolio.tsx";
 import { Pricing } from "./Components/Pricing/Pricing";
 import { ContactForm } from "./Components/ContactForm/ContactForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioImage } from "./Components/Portfolio/PortfolioImage/portfolioimage";
 import { NotFound } from "./Components/NotFound/NotFound";
-import { ThemeProvider } from "./providers/theme";
+import { ThemeProvider } from "./providers/theme.tsx";
 import { Footer } from "./Components/Footer/Footer";
 
 function App() {

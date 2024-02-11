@@ -1,5 +1,5 @@
 import styles from "./Modal.module.css";
-import { ThemeContext } from "../../providers/theme";
+import { ThemeContext } from "../../providers/theme.tsx";
 import { useContext } from "react";
 
 export const Modal = ({ children }) => {

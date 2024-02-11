@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import portfolioData from "../../../../public/photos.json";
 import styles from "./PortfolioImage.module.css";
-import { ThemeContext } from "../../../providers/theme";
+import { ThemeContext } from "../../../providers/theme.tsx";
 import { useContext } from "react";
 import classnames from "classnames";
 

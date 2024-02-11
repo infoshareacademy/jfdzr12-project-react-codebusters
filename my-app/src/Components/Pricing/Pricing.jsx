@@ -1,6 +1,6 @@
 import styles from "./Pricing.module.css";
-import { PricingPosition } from "./PricingPosition/PricingPosition";
-import { ThemeContext } from "../../providers/theme";
+import { PricingPosition } from "./PricingPosition/PricingPosition.tsx";
+import { ThemeContext } from "../../providers/theme.tsx";
 import { useContext } from "react";
 import classnames from "classnames";
 

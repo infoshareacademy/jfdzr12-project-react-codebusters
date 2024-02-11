@@ -1,9 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import {ReactElement, useState, useEffect, useContext } from "react";
 import styles from "./LandingPage.module.css";
-import { ThemeContext } from "../../providers/theme";
+import { ThemeContext } from "../../providers/theme.tsx";
+import { LandingPageProps } from "./LandingPage.types";
 
-export const LandingPage = ({ quotes }) => {
-  const [quote, setQuote] = useState(quotes[0]);
+export const LandingPage = ({ quotes }:LandingPageProps):ReactElement => {
+  const [quote, setQuote] = useState<string>(quotes[0]);
+
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
