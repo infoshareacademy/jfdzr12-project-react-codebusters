@@ -8,9 +8,7 @@ export const PricingPosition = (props) => {
 
   return (
     <>
-      <div
-        className={classnames(styles["pricing__option--single"], styles[theme])}
-      >
+      <div className={classnames(styles["pricing__option"], styles[theme])}>
         <div className={classnames(styles["pricing__content"], styles[theme])}>
           <h3
             className={classnames(
@@ -32,7 +30,6 @@ export const PricingPosition = (props) => {
             <ul
               className={classnames(
                 styles["pricing__description"],
-                styles["pricing__description-minus"],
                 styles[theme]
               )}
             >
