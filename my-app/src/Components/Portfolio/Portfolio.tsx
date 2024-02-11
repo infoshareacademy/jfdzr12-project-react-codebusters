@@ -2,14 +2,14 @@ import styles from "./Portfolio.module.css";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../providers/theme.tsx";
-import { PortfolioInterface } from "./Portfolio.types";
+import { PortfolioDataInterface } from "./Portfolio.types";
 
 
 export const Portfolio = () => {
-  const [setImageId] = useState(null);
+  const [_, setImageId] = useState<number | null>(null);
   const { theme } = useContext(ThemeContext);
 
-  const [portfolioData, setPortfolioData] = useState<PortfolioInterface | null>(null);
+  const [portfolioData, setPortfolioData] = useState<PortfolioDataInterface | null>(null);
 
   useEffect(() => {
     fetch("/photos.json")

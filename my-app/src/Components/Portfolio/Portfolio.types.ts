@@ -6,3 +6,7 @@ export interface PortfolioInterface {
     url: string;
     width: number;
   }
+
+export interface PortfolioDataInterface {
+  photos: Array<PortfolioInterface>;
+}
