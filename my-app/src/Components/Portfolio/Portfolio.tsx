@@ -2,16 +2,14 @@ import styles from "./Portfolio.module.css";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../providers/theme.tsx";
-import { PortfolioDataInterface } from "./Portfolio.types";
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from "../../../firebase-config";
+
 
 export const Portfolio = () => {
   const [_, setImageId] = useState<number | null>(null);
   const { theme } = useContext(ThemeContext);
-
   const [portfolioData, setPortfolioData] = useState(null);
-
 
   const getData = () => {
     const photosCollection = collection(db, "photos")
