@@ -3,21 +3,34 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../providers/theme.tsx";
 import { PortfolioDataInterface } from "./Portfolio.types";
-
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from "../../../firebase-config";
 
 export const Portfolio = () => {
   const [_, setImageId] = useState<number | null>(null);
   const { theme } = useContext(ThemeContext);
 
-  const [portfolioData, setPortfolioData] = useState<PortfolioDataInterface | null>(null);
+  const [portfolioData, setPortfolioData] = useState(null);
 
+
+  const getData = () => {
+    const photosCollection = collection(db, "photos")
+    onSnapshot(photosCollection, res => {
+      const photos = res.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+
+      }))
+
+      setPortfolioData(photos)
+    })
+
+  }
   useEffect(() => {
-    fetch("/photos.json")
-      .then((res) => res.json())
-      .then((data) => 
-        setPortfolioData(data)
-      );
-  }, []);
+    getData()
+  }, [])
+
+
   return (
     portfolioData && (
       <div className={`${styles["portfolio__container"]} ${styles[theme]}`}>
@@ -33,7 +46,7 @@ export const Portfolio = () => {
           </h3>
         </div>
         <div className={styles["portfolio__photos"]}>
-          {portfolioData.photos.map((photo) => (
+          {portfolioData.map((photo) => (
             <div key={photo.id} className={styles["portfolio__items"]}>
               <Link to={`/portfolio/${photo.id}`}>
                 <img
