@@ -4,11 +4,25 @@ import styles from "./PortfolioImage.module.css";
 import { ThemeContext } from "../../../providers/theme.tsx";
 import { useContext } from "react";
 import classnames from "classnames";
+import { db } from "../../../../firebase-config";
+import { doc } from 'firebase/firestore';
+import { collection } from "firebase/firestore";
+
+
 
 export const PortfolioImage = () => {
   const { imageId } = useParams();
-  const photo = portfolioData.photos.find((el) => el.id === parseInt(imageId));
+
+
+  const docRef = doc(db, `photos/${imageId}`)
+  console.log("bla", docRef)
+
+  // const photo = portfolioData.photos.find((el) => el.id === parseInt(imageId));
+  // const photo = docRef.
+  console.log("phot", photo)
   const { theme } = useContext(ThemeContext);
+
+
 
   return (
     <div
@@ -22,6 +36,7 @@ export const PortfolioImage = () => {
         </p>
         <h3>Price: {photo.price}$</h3>
       </div>
+      <button>Add to basket</button>
     </div>
   );
 };
