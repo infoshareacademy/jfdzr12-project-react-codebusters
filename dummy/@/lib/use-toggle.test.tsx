@@ -1,7 +1,17 @@
 import {describe, expect, it} from 'vitest';
 import {useToggle} from './use-toggle'
+import { renderHook } from '@testing-library/react';
 
 describe('useToggle', () => {
-	it.todo('should return initial value')
-	it.todo('should return toggled value')
+	it('should return initial value', () => {
+		const {result} = renderHook(() => useToggle(true));
+		const value = result.current[0]
+		expect(value).toBeTruthy();
+	})
+	it('should return toggled value', () => {
+		const {result} = renderHook(() => useToggle(true));
+		const toggle = result.current[1];
+		expect(toggle()).toBeFalsy();
+
+	})
 })
