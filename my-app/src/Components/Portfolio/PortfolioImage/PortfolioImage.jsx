@@ -5,7 +5,7 @@ import { ThemeContext } from "../../../providers/theme.tsx";
 import { useContext } from "react";
 import classnames from "classnames";
 import { db } from "../../../../firebase-config";
-import { doc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { collection } from "firebase/firestore";
 
 
@@ -14,12 +14,20 @@ export const PortfolioImage = () => {
   const { imageId } = useParams();
 
 
-  const docRef = doc(db, `photos/${imageId}`)
-  console.log("bla", docRef)
+  const docRef = doc(db, "photos", imageId)
+  const docSnap = await getDoc(docRef);
 
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+
+    console.log("No such document!");
+  }
+
+  // console.log("pho", docRef["url"])
   // const photo = portfolioData.photos.find((el) => el.id === parseInt(imageId));
   // const photo = docRef.
-  console.log("phot", photo)
+  // console.log("phot", photo)
   const { theme } = useContext(ThemeContext);
 
 
