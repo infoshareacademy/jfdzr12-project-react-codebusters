@@ -25,6 +25,10 @@ export const PortfolioImage = () => {
     fetchData();
   }, [imageId]);
 
+  const addToBasket = () => {
+    console.log("ADDED");
+  };
+
   if (!photo) {
     return <div>Loading...</div>;
   }
@@ -41,11 +45,24 @@ export const PortfolioImage = () => {
         </p>
         <h3>Price: {photo.price}$</h3>
       </div>
-      <button
-        className={classnames(styles["portfolio__input--buy"], styles[theme])}
-      >
-        {photo.amount ? "Add to basket" : "Out of stock"}
-      </button>
+      {photo.amount ? (
+        <button
+          onClick={addToBasket}
+          className={classnames(styles["portfolio__input--buy"], styles[theme])}
+        >
+          Add to basket
+        </button>
+      ) : (
+        <button
+          disabled
+          className={classnames(
+            styles["portfolio__input--buy--disabled"],
+            styles[theme]
+          )}
+        >
+          Out of stock
+        </button>
+      )}
     </div>
   );
 };
