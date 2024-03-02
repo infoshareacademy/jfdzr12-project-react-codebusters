@@ -1,9 +1,9 @@
-import {ReactElement, useState, useEffect, useContext } from "react";
+import { ReactElement, useState, useEffect, useContext } from "react";
 import styles from "./LandingPage.module.css";
 import { ThemeContext } from "../../providers/theme.tsx";
 import { LandingPageProps } from "./LandingPage.types";
 
-export const LandingPage = ({ quotes }:LandingPageProps):ReactElement => {
+export const LandingPage = ({ quotes }: LandingPageProps): ReactElement => {
   const [quote, setQuote] = useState<string>(quotes[0]);
 
   const { theme } = useContext(ThemeContext);
@@ -30,10 +30,11 @@ export const LandingPage = ({ quotes }:LandingPageProps):ReactElement => {
           </p>
         </div>
         <div className={styles["info__image-container"]}>
-          <img
-            className={styles["info__img"]}
-            src="../public/images/studio.png"
-          ></img>
+          {theme === "light" ? (
+            <img className={styles["info__img"]} src="../public/images/main-img.png" />
+          ) : (
+            <img className={styles["info__img"]} src="../public/images/main-img-dark1.png" />
+          )}
         </div>
       </div>
     </div>
