@@ -11,7 +11,8 @@
   border-radius: 35px;
 }
 
-.portfolio__input--buy {
+.portfolio__input--buy,
+.portfolio__input--buy--disabled {
   align-self: center;
   padding: 2px 20px;
   margin: 20px 20px;
@@ -32,6 +33,11 @@
   color: var(--main-text-color-dark);
 }
 
+.portfolio__input--buy--disabled.light {
+  color: var(--box-light-color-light);
+  background-color: rgb(202, 200, 200);
+}
+
 .portfolio__input--buy.light {
   color: var(--dark-text-color-light);
   background-color: var(--box-dark-color-light);
@@ -40,6 +46,11 @@
 .portfolio__input--buy.light:hover {
   color: var(--box-light-color-light);
   background-color: var(--dark-hover-color-light);
+}
+
+.portfolio__input--buy--disabled.dark {
+  color: var(--dark-text-color-light);
+  background-color: rgb(166, 165, 165);
 }
 
 .portfolio__input--buy.dark {
