@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 0.5px solid rgba(63, 63, 54, 30%);
 }
 
 .footer__text {

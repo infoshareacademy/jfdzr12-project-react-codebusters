@@ -47,14 +47,19 @@ export const Portfolio = () => {
           {portfolioData.map((photo) => (
             <div key={photo.id} className={styles["portfolio__items"]}>
               <Link to={`/portfolio/${photo.id}`}>
-                <img
-                  src={photo.url}
-                  className={styles["portfolio__photo"]}
-                  data-id={photo.id}
-                  onClick={() => {
-                    setImageId(photo.id);
-                  }}
-                />
+                <div className={styles["portfolio__items"]}>
+                  <div className={styles["portfolio__photo-container"]}>
+                    <img
+                      src={photo.url}
+                      className={styles["portfolio__photo"]}
+                      data-id={photo.id}
+                      onClick={() => {
+                        setImageId(photo.id);
+                      }}
+                    />
+                    <div className={styles["portfolio__overlay"]}>open</div>
+                  </div>
+                </div>
               </Link>
             </div>
           ))}

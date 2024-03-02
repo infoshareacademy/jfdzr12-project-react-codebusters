@@ -5,6 +5,7 @@ import { ThemeContext } from "../../providers/theme.tsx";
 
 export const BasketModal = ({ isOpen, onClose }) => {
   const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -28,24 +29,22 @@ export const BasketModal = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   return (
-    <>
-      <div style={{ display: isOpen ? "block" : "none" }}>
-        {isOpen && (
-          <div className="basket-modal__overlay" onClick={onClose}></div>
-        )}
-
-        <Modal>
-          <button
-            className={`${styles["basket-modal__button-close"]} ${styles[theme]}`}
-            onClick={onClose}
-          >
-            x
-          </button>
-          <div>
-            <h1>Basket modal </h1>
-          </div>
-        </Modal>
-      </div>
-    </>
+    <div style={{ display: isOpen ? "block" : "none" }}>
+      <div
+        className={`${styles["basket-modal__overlay"]}`}
+        onClick={onClose}
+      ></div>
+      <Modal>
+        <button
+          className={`${styles["basket-modal__button-close"]} ${styles[theme]}`}
+          onClick={onClose}
+        >
+          x
+        </button>
+        <div>
+          <h1>Basket modal</h1>
+        </div>
+      </Modal>
+    </div>
   );
 };
