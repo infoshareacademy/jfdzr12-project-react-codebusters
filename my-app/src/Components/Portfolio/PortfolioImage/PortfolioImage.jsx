@@ -26,7 +26,7 @@ export const PortfolioImage = () => {
   }, [imageId]);
 
   const addToBasket = () => {
-    console.log("ADDED");
+    // console.log("ADDED");
   };
 
   if (!photo) {
