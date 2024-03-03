@@ -1,13 +1,20 @@
 import styles from "./BasketModal.module.css";
-import { Modal } from "../Modal/Modal.jsx";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../providers/theme.tsx";
-import { BasketContext } from "../../providers/BasketContext";
 import { BasketItem } from "../BasketModal/BasketItem/BasketItem.tsx";
+import { db } from "../../../firebase-config.js";
+import { collection, doc, onSnapshot } from "firebase/firestore";
+import classNames from "classnames";
 
-export const BasketModal = ({ isOpen, onClose }) => {
+export const BasketModal = ({ isOpen, onClose, user }) => {
   const { theme } = useContext(ThemeContext);
-  const { basket } = useContext(BasketContext);
+  console.log("User from basket", user);
+
+  const [portfolioData, setPortfolioData] = useState([]);
+
+  const [basket, setBasket] = useState([]);
+  // const [photos, setPhotos] = useState([]);
+
   console.log("BASKET", basket);
 
   useEffect(() => {
@@ -32,31 +39,68 @@ export const BasketModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
+  const getData = () => {
+    const basketCollection = doc(db, "basket", user.uid);
+    onSnapshot(basketCollection, (doc) => {
+      const item = doc.data();
+      setBasket(item.photos);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getPhotosData = () => {
+    const photosCollection = collection(db, "photos");
+    onSnapshot(photosCollection, (res) => {
+      const photos = res.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setPortfolioData(photos);
+    });
+  };
+  useEffect(() => {
+    getPhotosData();
+  }, []);
+
+  console.log("PORTFOLIO", portfolioData);
+  console.log("Basket", basket);
+
+  const result = portfolioData.filter((obj) => basket.includes(Number(obj.id)));
+
+  console.log("RESULT", result);
+
   return (
-    <div style={{ display: isOpen ? "block" : "none" }}>
-      <div
-        className={`${styles["basket-modal__overlay"]}`}
-        onClick={onClose}
-      ></div>
-      <Modal>
-        <button
-          className={`${styles["basket-modal__button-close"]} ${styles[theme]}`}
+    <div className={classNames(styles["basket__container"], styles[theme])}>
+      <h1 className={classNames(styles["basket__header"], styles[theme])}>
+        Basket
+      </h1>
+      <div className={classNames(styles["basket__form"], styles[theme])}>
+        <div
+          className={`${styles["basket-modal__overlay"]}`}
           onClick={onClose}
-        >
-          x
-        </button>
+        ></div>
         <div>
-          {basket.length > 0 ? (
-            <div>
-              {basket.map((product, index) => (
-                <BasketItem key={index} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div>Empty basket</div>
-          )}
+          <div>
+            {basket ? (
+              <div>
+                {result.map((item, index) => (
+                  <div key={index}>
+                    <div>{item.author}</div>
+                    <img src={item.url} width={300} />
+                    <div>{item.price}$</div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div>Empty basket</div>
+            )}
+          </div>
         </div>
-      </Modal>
+      </div>
     </div>
   );
 };

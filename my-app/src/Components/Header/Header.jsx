@@ -4,8 +4,10 @@ import React, { useContext, useState } from "react";
 import { BasketModal } from "../BasketModal/BasketModal";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../providers/theme.tsx";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebase-config.js";
 
-export const Header = () => {
+export const Header = ({ setUser, user }) => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
   const { theme, toggleLightTheme, toggleDarkTheme } = useContext(ThemeContext);
 
@@ -32,23 +34,27 @@ export const Header = () => {
         </div>
         <div className={styles["header__links-container"]}>
           <ul className={styles["header__links"]}>
-            <li
-              className={classnames(
-                styles.header__link,
-                styles["header__links--examples"],
-                styles[theme]
-              )}
-            >
-              <NavLink to="/portfolio">Portfolio</NavLink>
-            </li>
-            <li
-              className={classnames(
-                styles.header__link,
-                styles["header__links--pricing"]
-              )}
-            >
-              <NavLink to="/pricing">Pricing</NavLink>
-            </li>
+            {user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--examples"],
+                  styles[theme]
+                )}
+              >
+                <NavLink to="/portfolio">Portfolio</NavLink>
+              </li>
+            )}
+            {user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--pricing"]
+                )}
+              >
+                <NavLink to="/pricing">Pricing</NavLink>
+              </li>
+            )}
             <li
               className={classnames(
                 styles.header__link,
@@ -57,15 +63,55 @@ export const Header = () => {
             >
               <NavLink to="/contactform">Contact</NavLink>
             </li>
-            <li
-              className={classnames(
-                styles.header__link,
-                styles["header__links--basket"]
-              )}
-              onClick={handleCartClick}
-            >
-              Basket
-            </li>
+            {user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--basket"]
+                )}
+                // onClick={handleCartClick}
+              >
+                <NavLink to="/basket">Basket</NavLink>
+                {/* Basket */}
+              </li>
+            )}
+            {!user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--contact"]
+                )}
+              >
+                <NavLink to="/login">Sign in</NavLink>
+              </li>
+            )}
+
+            {!user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--contact"]
+                )}
+              >
+                <NavLink to="/register">Sign up</NavLink>
+              </li>
+            )}
+            {user && (
+              <li
+                className={classnames(
+                  styles.header__link,
+                  styles["header__links--contact"]
+                )}
+              >
+                <div
+                  onClick={() => {
+                    signOut(auth);
+                  }}
+                >
+                  Sign out
+                </div>
+              </li>
+            )}
           </ul>
         </div>
         <div className={styles["header__theme-buttons-container"]}>
@@ -86,7 +132,11 @@ export const Header = () => {
           )}
         </div>
       </div>
-      <BasketModal isOpen={isCartModalOpen} onClose={handleCloseCartModal} />
+      {/* <BasketModal
+        isOpen={isCartModalOpen}
+        onClose={handleCloseCartModal}
+        user={user}
+      /> */}
     </>
   );
 };

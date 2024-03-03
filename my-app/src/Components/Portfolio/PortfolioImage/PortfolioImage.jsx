@@ -4,17 +4,34 @@ import { ThemeContext } from "../../../providers/theme.tsx";
 import { useContext, useState, useEffect } from "react";
 import classnames from "classnames";
 import { db } from "../../../../firebase-config";
-import { doc, getDoc } from "firebase/firestore";
-import { BasketContext } from "../../../providers/BasketContext.tsx";
+import {
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  setDoc,
+} from "firebase/firestore";
 
-export const PortfolioImage = () => {
+export const PortfolioImage = ({ user }) => {
   const { imageId } = useParams();
   const { theme } = useContext(ThemeContext);
   const [photo, setPhoto] = useState(null);
-  const { addToBasket } = useContext(BasketContext);
+  const [users, setUsers] = useState([]);
 
-  const handleClick = (product) => {
-    addToBasket(product);
+  const handleClick = () => {
+    console.log("USER:", user);
+    //1.pobrac userów
+    //2. jak user istnieje to
+    //// Add a new document in collection "photos"
+    //pobieramy tablicę, dodajemy
+    // await setDoc(doc(db, "basket", user.uid, "photos"), {
+    //   id: id,
+    // });
+    //3.jak usera nie ma to
+    // Add a new document with a generated id
+    // const newUserRef = doc(collection(db, "basket", user.uid));
+    ///4. dodajemy dane to doc
+    // await setDoc(doc(db, "basket"), data); ---??? bo to arr?
   };
 
   useEffect(() => {
@@ -30,6 +47,25 @@ export const PortfolioImage = () => {
 
     fetchData();
   }, [imageId]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const docRef = collection(db, "basket");
+  //     console.log("docRef", docRef);
+  //     const docSnap = await getDoc(docRef);
+
+  //     if (docSnap.exists()) {
+  //       console.log("docSnap", docSnap);
+  //       console.log("docSnapData", docSnap.data());
+  //       setUsers(docSnap.data());
+  //     } else {
+  //       console.log("No such document!");
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+  // console.log("USERS", users);
 
   if (!photo) {
     return <div>Loading...</div>;
