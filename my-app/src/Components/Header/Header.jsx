@@ -69,9 +69,10 @@ export const Header = ({ setUser, user }) => {
                   styles.header__link,
                   styles["header__links--basket"]
                 )}
-                onClick={handleCartClick}
+                // onClick={handleCartClick}
               >
-                Basket
+                <NavLink to="/basket">Basket</NavLink>
+                {/* Basket */}
               </li>
             )}
             {!user && (
@@ -131,11 +132,11 @@ export const Header = ({ setUser, user }) => {
           )}
         </div>
       </div>
-      <BasketModal
+      {/* <BasketModal
         isOpen={isCartModalOpen}
         onClose={handleCloseCartModal}
         user={user}
-      />
+      /> */}
     </>
   );
 };

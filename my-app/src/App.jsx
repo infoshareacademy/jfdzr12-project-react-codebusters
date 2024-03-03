@@ -14,6 +14,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { auth } from "./../firebase-config.js";
 import { useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
+import { BasketModal } from "./Components/BasketModal/BasketModal.jsx";
 
 function App() {
   const quotes = [
@@ -22,6 +23,7 @@ function App() {
   ];
 
   const [user, setUser] = useState(null);
+
   onAuthStateChanged(auth, (res) => {
     setUser(res);
   });
@@ -33,29 +35,45 @@ function App() {
           <Header setUser={setUser} user={user} />
           <div className="main__container">
             <Routes>
-              <Route path="/" element={<LandingPage quotes={quotes} />}></Route>
-              <Route
-                path="/portfolio"
-                element={user ? <Portfolio /> : <Login />}
-              ></Route>
-              <Route
-                path="/pricing"
-                element={user ? <Pricing /> : <Login />}
-              ></Route>
-              <Route path="/contactform" element={<ContactForm />}></Route>
-              <Route
-                path="/portfolio/:imageId"
-                element={user ? <PortfolioImage user={user} /> : <Login />}
-              ></Route>
+              {user ? (
+                <>
+                  <Route
+                    path="/"
+                    element={<LandingPage quotes={quotes} />}
+                  ></Route>
+                  <Route
+                    path="/portfolio"
+                    element={user ? <Portfolio /> : <Login />}
+                  ></Route>
+                  <Route
+                    path="/pricing"
+                    element={user ? <Pricing /> : <Login />}
+                  ></Route>
+                  <Route path="/contactform" element={<ContactForm />}></Route>
+                  <Route
+                    path="/portfolio/:imageId"
+                    element={user ? <PortfolioImage user={user} /> : <Login />}
+                  ></Route>
+                  <Route
+                    path="/basket"
+                    element={user ? <BasketModal user={user} /> : <Login />}
+                  ></Route>
+                </>
+              ) : (
+                <>
+                  <Route
+                    path="/login"
+                    element={user ? <Navigate to={"/"} replace /> : <Login />}
+                  ></Route>
+                  <Route
+                    path="/register"
+                    element={
+                      user ? <Navigate to={"/"} replace /> : <Register />
+                    }
+                  ></Route>
+                </>
+              )}
               <Route path="*" element={<NotFound />}></Route>
-              <Route
-                path="/login"
-                element={user ? <Navigate to={"/"} replace /> : <Login />}
-              ></Route>
-              <Route
-                path="/register"
-                element={user ? <Navigate to={"/"} replace /> : <Register />}
-              ></Route>
             </Routes>
           </div>
           <Footer />
