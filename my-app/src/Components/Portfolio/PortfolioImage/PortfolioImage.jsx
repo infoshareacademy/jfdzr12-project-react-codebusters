@@ -5,11 +5,17 @@ import { useContext, useState, useEffect } from "react";
 import classnames from "classnames";
 import { db } from "../../../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
+import { BasketContext } from "../../../providers/BasketContext.tsx";
 
 export const PortfolioImage = () => {
   const { imageId } = useParams();
   const { theme } = useContext(ThemeContext);
   const [photo, setPhoto] = useState(null);
+  const { addToBasket } = useContext(BasketContext);
+
+  const handleClick = (product) => {
+    addToBasket(product);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,10 +30,6 @@ export const PortfolioImage = () => {
 
     fetchData();
   }, [imageId]);
-
-  const addToBasket = () => {
-    // console.log("ADDED");
-  };
 
   if (!photo) {
     return <div>Loading...</div>;
@@ -47,7 +49,7 @@ export const PortfolioImage = () => {
       </div>
       {photo.amount ? (
         <button
-          onClick={addToBasket}
+          onClick={() => handleClick(photo)}
           className={classnames(styles["portfolio__input--buy"], styles[theme])}
         >
           Add to basket

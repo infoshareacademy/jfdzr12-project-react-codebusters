@@ -35,4 +35,4 @@ const useBasket = () => {
     return context;
 }
 
-export { BasketProvider, useBasket };
+export { BasketProvider, useBasket, BasketContext };
