@@ -2,9 +2,13 @@ import styles from "./BasketModal.module.css";
 import { Modal } from "../Modal/Modal.jsx";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "../../providers/theme.tsx";
+import { BasketContext } from "../../providers/BasketContext";
+import { BasketItem } from "../BasketModal/BasketItem/BasketItem.tsx";
 
 export const BasketModal = ({ isOpen, onClose }) => {
   const { theme } = useContext(ThemeContext);
+  const { basket } = useContext(BasketContext);
+  console.log("BASKET", basket);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -42,7 +46,15 @@ export const BasketModal = ({ isOpen, onClose }) => {
           x
         </button>
         <div>
-          <h1>Basket modal</h1>
+          {basket.length > 0 ? (
+            <div>
+              {basket.map((product, index) => (
+                <BasketItem key={index} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div>Empty basket</div>
+          )}
         </div>
       </Modal>
     </div>
