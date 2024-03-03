@@ -1,13 +1,16 @@
 import styles from "./BasketModal.module.css";
 import { Modal } from "../Modal/Modal.jsx";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../providers/theme.tsx";
-import { BasketContext } from "../../providers/BasketContext";
 import { BasketItem } from "../BasketModal/BasketItem/BasketItem.tsx";
+import { db } from "../../../firebase-config.js";
+import { collection } from "firebase/firestore";
 
-export const BasketModal = ({ isOpen, onClose }) => {
+export const BasketModal = ({ isOpen, onClose, user }) => {
   const { theme } = useContext(ThemeContext);
-  const { basket } = useContext(BasketContext);
+  console.log("User from basket", user);
+
+  const [basket, setBasket] = useState([]);
   console.log("BASKET", basket);
 
   useEffect(() => {
@@ -32,6 +35,21 @@ export const BasketModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
+  // const getData = () => {
+  //   const basketCollection = collection(db, "basket", user.uid);
+  //   onSnapshot(basketCollection, (res) => {
+  //     const items = res.docs.map((doc) => ({
+  //       id: doc.id,
+  //       ...doc.data(),
+  //     }));
+
+  //     setBasket(items);
+  //   });
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
   return (
     <div style={{ display: isOpen ? "block" : "none" }}>
       <div
@@ -46,7 +64,7 @@ export const BasketModal = ({ isOpen, onClose }) => {
           x
         </button>
         <div>
-          {basket.length > 0 ? (
+          {basket ? (
             <div>
               {basket.map((product, index) => (
                 <BasketItem key={index} product={product} />

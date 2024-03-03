@@ -4,17 +4,17 @@ import { ThemeContext } from "../../../providers/theme.tsx";
 import { useContext, useState, useEffect } from "react";
 import classnames from "classnames";
 import { db } from "../../../../firebase-config";
-import { doc, getDoc } from "firebase/firestore";
-import { BasketContext } from "../../../providers/BasketContext.tsx";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
-export const PortfolioImage = () => {
+export const PortfolioImage = ({ user }) => {
   const { imageId } = useParams();
   const { theme } = useContext(ThemeContext);
   const [photo, setPhoto] = useState(null);
-  const { addToBasket } = useContext(BasketContext);
+  // const { addToBasket } = useContext(BasketContext);
 
-  const handleClick = (product) => {
-    addToBasket(product);
+  const handleClick = () => {
+    console.log("USER:", user);
+    // addToBasket(product);
   };
 
   useEffect(() => {
